@@ -2,7 +2,7 @@ import {TypeAnimation} from 'react-type-animation';
 
 export const Home = () => {
   return (
-    <div className="md:pb-40 lg:pb-40 xl:pb-0 flex items-center h-full justify-center sm:px-20 xl:flex-row flex-col-reverse">
+    <div className="xl:pt-20 md:pb-40 lg:pb-40 xl:pb-0 flex items-center justify-center sm:px-20 xl:flex-row flex-col-reverse">
       <div className="flex items-center xl:items-end flex-col py-10 xl:w-1/2 w-full text-xl">
         <div className="w-fit">
           <p className="text-xl text-themePrimaryColor">
@@ -32,7 +32,7 @@ export const Home = () => {
         </div>
       </div>
       <div className="static: xl:relative top-0 xl:top-[-64px] xl:w-1/2 w-ful justify-center">
-        <div className="bg-cover bg-photo w-[400px] h-[400px] xl:w-[500px] xl:h-[580px]"></div>
+        <div className="bg-cover bg-bottom bg-photo w-[300px] h-[300px] md:w-[400px] md:h-[400px] xl:w-[500px] xl:h-[580px]"></div>
       </div>
     </div>
   );

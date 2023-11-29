@@ -38,8 +38,8 @@ export const Technologies = () => {
       </div>
 
       <div className="w-full mt-12">
-        <i className="text-lg fond-light text-primaryColor pr-4">More information in CV</i>
-        <button className="btn">Download</button>
+        <i className="text-lg fond-light text-primaryColor pr-4">More information</i>
+        <button className="btn">Download CV</button>
       </div>
     </div>
   );
