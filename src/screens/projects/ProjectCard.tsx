@@ -1,5 +1,5 @@
+import img from 'assets/images/cf-logo.webp';
 import {BiLogoPostgresql} from 'react-icons/bi';
-import img from 'assets/images/cf-logo.webp'
 
 import {FaNodeJs, FaReact} from 'react-icons/fa';
 import {SiApollographql, SiGraphql, SiTypescript} from 'react-icons/si';

@@ -1,6 +1,21 @@
+import {AppContext, AppContextInterface} from 'providers/application';
+import {useContext} from 'react';
+import {Link, useLocation, useNavigate} from 'react-router-dom';
 import {TypeAnimation} from 'react-type-animation';
 
+import pdf from 'assets/EvgenNikolenko-JSdev.pdf';
+
 export const Home = () => {
+  const navigate = useNavigate();
+  const {pathname} = useLocation();
+
+  const {setPdfPreviewerOpen} = useContext(AppContext) as AppContextInterface;
+
+  const handleShowCV = () => {
+    setPdfPreviewerOpen(true);
+    navigate('/cv', {state: {historyPath: pathname}});
+  };
+
   return (
     <div className="xl:pt-20 md:pb-40 lg:pb-40 xl:pb-0 flex items-center justify-center sm:px-20 xl:flex-row flex-col-reverse">
       <div className="flex items-center xl:items-end flex-col py-10 xl:w-1/2 w-full text-xl">
@@ -26,8 +41,18 @@ export const Home = () => {
             repeat={Infinity}
           />
           <div className="w-full mt-10 flex flex-col sm:flex-row">
+            <Link to={pdf} target="_blank" download>
             <button className="w-full sm:w-fit rounded btn mb-8 sm:mb-0 mr-10 px-12 py-4">Download CV</button>
-            <button className="w-full sm:w-fit rounded btn-secondary px-12 py-4 hover:brightness-110">Open CV</button>
+
+            </Link>
+
+            
+            <button
+              className="w-full sm:w-fit rounded btn-secondary px-12 py-4 hover:brightness-110"
+              onClick={handleShowCV}
+            >
+              Open CV
+            </button>
           </div>
         </div>
       </div>

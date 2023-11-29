@@ -1,4 +1,4 @@
-import appContext, {AppContext} from 'providers/application/AppContext';
+import {AppContext, AppContextInterface} from 'providers/application';
 import {useContext} from 'react';
 import {useMediaQuery} from 'react-responsive';
 
@@ -6,7 +6,7 @@ import {mediaBreakpoints} from 'responsive';
 import './styles.css';
 
 export const MenuResponsive = () => {
-  const {isResponsiveTabBar, setResponsiveTabBar} = useContext(appContext) as AppContext;
+  const {isResponsiveTabBar, setResponsiveTabBar} = useContext(AppContext) as AppContextInterface;
 
   const mobileAndTablet = useMediaQuery({
     query: `(max-width: ${mediaBreakpoints.xl}px)`,

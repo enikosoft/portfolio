@@ -1,18 +1,26 @@
 import {useContext, useState} from 'react';
-import {Link, useLocation} from 'react-router-dom';
+import {Link, useLocation, useNavigate} from 'react-router-dom';
 
 import {FaFolder, FaFolderOpen} from 'react-icons/fa';
 import {IoIosArrowDown, IoIosArrowForward} from 'react-icons/io';
 
-import appContext, {AppContext} from 'providers/application/AppContext';
+import {AppContext, AppContextInterface} from 'providers/application';
 import {routesLinkItems} from 'providers/routes';
+import {MdClose} from 'react-icons/md';
 import {twMerge} from 'tailwind-merge';
 
 export const LeftBar = () => {
   const {pathname} = useLocation();
-
+  const navigate = useNavigate();
   const [open, setOpen] = useState<boolean>(true);
-  const {isResponsiveTabBar, setResponsiveTabBar} = useContext(appContext) as AppContext;
+
+  const {isResponsiveTabBar, setResponsiveTabBar} = useContext(AppContext) as AppContextInterface;
+  const {pdfPreviewerOpen, setPdfPreviewerOpen} = useContext(AppContext) as AppContextInterface;
+
+  const handleCloseCVPreviewer = () => {
+    setPdfPreviewerOpen(false);
+    navigate('/');
+  };
 
   return (
     <aside
@@ -41,17 +49,23 @@ export const LeftBar = () => {
       </button>
       {open && (
         <>
-          {routesLinkItems.map((item, key) => (
+          {routesLinkItems(pdfPreviewerOpen).map((item, key) => (
             <Link
               key={key}
               to={item?.path || '/'}
               onClick={() => setResponsiveTabBar(!isResponsiveTabBar)}
               className={`${
                 pathname === item?.path && 'active'
-              } flex items-center gap-2 px-14 py-1 text-base text-textEditorColor hover:bg-textEditorHoverBg hover:text-textEditorHoverColor [&.active]:bg-themePrimaryColor [&.active]:text-tabBarActiveTextColor`}
+              } flex relative items-center gap-2 px-14 py-1 text-base text-textEditorColor hover:bg-textEditorHoverBg hover:text-textEditorHoverColor [&.active]:bg-themePrimaryColor [&.active]:text-tabBarActiveTextColor`}
             >
               {item.logo}
               {item.title}
+              {item?.closable && (
+                <MdClose
+                  onClick={handleCloseCVPreviewer}
+                  className="text-xl absolute right-4 text-textEditorColor hover:cursor-pointer"
+                />
+              )}
             </Link>
           ))}
         </>
