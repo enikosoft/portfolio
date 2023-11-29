@@ -3,7 +3,7 @@ import {FaFilePdf, FaHtml5, FaReact} from 'react-icons/fa';
 import {SiJavascript, SiTypescript} from 'react-icons/si';
 import {VscJson} from 'react-icons/vsc';
 import {Navigate, createBrowserRouter} from 'react-router-dom';
-import {About, Home, Layout, PdfPriever, Projects, Technologies} from 'screens';
+import {About, Contact, Home, Layout, PdfPriever, Projects, Technologies} from 'screens';
 
 export interface RoutesLinkItems {
   logo: ReactElement;
@@ -78,7 +78,7 @@ export const routes = (pdfPreviewerOpen: boolean) => {
         },
         {
           path: '/contact',
-          element: <div>contact</div>,
+          element: <Contact />,
         },
         pdfPreviewerOpen
           ? {

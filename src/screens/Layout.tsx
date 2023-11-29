@@ -14,7 +14,7 @@ export const Layout = () => {
           <section className="h-full w-full bg-bgColor xl:ml-[288px]">
             <TabBar />
 
-            <main className="page-wrapper">
+            <main className="page-wrapper pl-2 sm:pl-10 px-2">
               <Outlet />
             </main>
           </section>

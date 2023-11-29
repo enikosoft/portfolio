@@ -45,15 +45,12 @@
 }
 
 @layer utilities {
-    
-    .page-wrapper {
+  .page-wrapper {
       height: calc(100vh - 144px);
       overflow: auto;
       padding-bottom: 16px;
-      padding: 10px 8px;
 
     }
-  
 
   .html-tag {
     font-size: 1.3rem;
@@ -61,6 +58,23 @@
     color: #768390;
     font-family: theme('fontFamily.laBelleAurore');
   }
+
+  .line-contact:before {
+    font-size: 18px;
+    font-weight: 200;
+    position: absolute;
+    left: -10px;
+    content: counter(line);
+    counter-increment: line;
+    display: inline-block;
+    border:none;
+    color: gray;
+  }
+  @media screen and (max-width: 640px) {
+      .line-contact:before {
+        left:0
+      }
+    }
 }
 
 
