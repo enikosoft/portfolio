@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;1,200;1,300;1,400;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;1,200;1,300;1,400;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=La+Belle+Aurore&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components{
+  .btn {
+    background: theme('colors.themeButtonPrimaryColor');
+    font-family: theme('fontFamily.nunito');
+    color: #FFFFFF;
+    font-size: 16px;
+    padding: 4px 24px;
+    /* @apply bg-themeButtonPrimaryColor hover:bg-themePrimaryColor font-nunito text-white font-light text-base py-1.5 px-4 */
+  }
+
+  .btn:hover {
+    background: theme('colors.themePrimaryColor');
+  }
+
+  .btn-secondary {
+    background: theme('colors.themeButtonSecondaryColor');
+    font-family: theme('fontFamily.nunito');
+    color: #FFFFFF;
+    font-size: 16px;
+    padding: 4px 24px;
+    /* @apply bg-themeButtonPrimaryColor hover:bg-themePrimaryColor font-nunito text-white font-light text-base py-1.5 px-4 */
+  }
+
+  
+  .tab {
+    background: theme('colors.themeButtonPrimaryColor');
+    font-family: theme('fontFamily.nunito');
+    color: #FFFFFF;
+    font-size: 16px;
+    /* @apply bg-themeButtonPrimaryColor hover:bg-themePrimaryColor font-nunito text-white font-light text-base py-1.5 px-4 */
+  }
+  /* .btn-secondary:hover {
+    background: lighten(theme('colors.themePrimaryColor'), 50%);
+    
+  } */
+
+  
+}
+
+@layer utilities {
+    
+    .page-wrapper {
+      height: calc(100vh - 144px);
+      overflow: auto;
+      padding-bottom: 16px;
+      padding: 10px 8px;
+
+    }
+  
+
+  .html-tag {
+    font-size: 1.3rem;
+    line-height: 2rem;
+    color: #768390;
+    font-family: theme('fontFamily.laBelleAurore');
+  }
+}
+
+
+* {
+  font-family: 'Source Code Pro', monospace;
+  font-size: 16px;
+}
+
+:root {
+  --primaryColor: #000000;
+  --bgColor: rgb(249, 249, 251);
+  --leftSideBorder: #219fd5;
+  --textEditorColor: #6C8CAD;
+
+}
+
+
+
+.theme-dark {
+  --primaryColor: #FFFFFF;
+  --bgColor: #252A2E;
+  --leftSideBorder: #219fd5;
+  --textEditorColor: #6C8CAD;
+
+}
+
+.theme-blue {
+  --primaryColor: #FFFFFF;
+  --bgColor: #0C2235;
+  --leftSideBorder: #143d4f;
+
+  --textEditorColor: #c4dbf2;
+  --textEditorHoverColor: #4a83a0;
+  --textEditorHoverBg: #0E293F;
+
+  --headerBorderColor: #625c5c;
+
+
+  --tabBarBgColor: #020E1B;
+  --tabBarBorderColor: #625c5c;
+  --tabBarActiveBorderColor: #369FD5;
+  --tabBarActiveTextColor: #FFFFFF;
+  --tabBarActiveBgColor: #153855;
+
+  /* --themePrimaryColor: #24566f; */
+
+  --themePrimaryColor: #369FD5;
+  --themeButtonPrimaryColor: #1e648a;
+  --themeButtonSecondaryColor: #3a3c41;
+
+  
+}
