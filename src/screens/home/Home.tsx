@@ -42,11 +42,9 @@ export const Home = () => {
           />
           <div className="w-full mt-10 flex flex-col sm:flex-row">
             <Link to={pdf} target="_blank" download>
-            <button className="w-full sm:w-fit rounded btn mb-8 sm:mb-0 mr-10 px-12 py-4">Download CV</button>
-
+              <button className="w-full sm:w-fit rounded btn mb-8 sm:mb-0 mr-10 px-12 py-4">Download CV</button>
             </Link>
 
-            
             <button
               className="w-full sm:w-fit rounded btn-secondary px-12 py-4 hover:brightness-110"
               onClick={handleShowCV}

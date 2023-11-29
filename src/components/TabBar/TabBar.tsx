@@ -26,6 +26,7 @@ export const TabBar = () => {
     <Link
       key={key}
       to={item?.path || '/'}
+      state={{historyPath: state?.historyPath}}
       className={`
         ${pathname === item?.path && 'active'}
         relative flex items-center gap-2 border-b border-b-tabBarBorderColor border-r border-t border-r-tabBarBorderColor border-t-tabBarBgColor bg-tabBarBgColor px-6 py-2 text-base text-textEditorColor
