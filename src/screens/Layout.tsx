@@ -5,7 +5,7 @@ import {Outlet} from 'react-router-dom';
 export const Layout = () => {
   return (
     <ThemeProvider>
-      <div className="flex h-screen w-full flex-col">
+      <div className="flex h-[100svh] w-full flex-col">
         <Header />
 
         <section className="flex h-content w-full xl:flex-row flex-col-reverse overflow-hidden">
