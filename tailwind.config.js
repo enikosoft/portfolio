@@ -42,9 +42,9 @@ export default {
         projects: 'calc(85vh)',
       },
       backgroundImage: {
-        photo: "url('./src/assets/images/photo.png')",
-        about: "url('./src/assets/images/about.png')",
-        cfProject: "url('./src/assets/images/cf-logo.webp')",
+        photo: `url('assets/images/photo.png')`,
+        about: "url('assets/images/about.png')",
+        cfProject: "url('assets/images/cf-logo.webp')",
       },
       boxShadow: {
         technologiesCard: `2px 2px 10px 0px theme(colors.themePrimaryColor)`,
