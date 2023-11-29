@@ -43,21 +43,19 @@ export const Contact = () => {
       </div>
       <div className="flex flex-col lg:flex-row pt-8 lg:pt-32">
         <div>
-          <div className="">
-            <div className="flex flex-col items-center">
-              <h3 className="font-bold text-primaryColor">FIND ME ON</h3>
-              <p className="text-primaryColor">
-                Please don`t hesitate to reach out to me{' '}
-                <span className="text-themePrimaryColor text-lg">and connect.</span>
-              </p>
-            </div>
-            <div className="p-2 w-full grid grid-cols-5 gap-1 sm:gap-6 items-center">
-              <FaLinkedin className="text-[54px] text-themePrimaryColor m-auto hover:cursor-pointer" />{' '}
-              <FaGithub className="text-[54px] text-themePrimaryColor m-auto hover:cursor-pointer" />{' '}
-              <FaTelegram className="text-[54px] text-themePrimaryColor m-auto hover:cursor-pointer" />{' '}
-              <FaInstagramSquare className="text-[54px] text-themePrimaryColor m-auto hover:cursor-pointer" />{' '}
-              <BiLogoGmail className="text-[54px] text-themePrimaryColor m-auto hover:cursor-pointer" />
-            </div>
+          <div className="flex flex-col items-center">
+            <h3 className="font-bold text-primaryColor">FIND ME ON</h3>
+            <p className="text-primaryColor">
+              Please don`t hesitate to reach out to me{' '}
+              <span className="text-themePrimaryColor text-lg">and connect.</span>
+            </p>
+          </div>
+          <div className="p-2 w-full grid grid-cols-5 gap-1 sm:gap-6 items-center">
+            <FaLinkedin className="text-[54px] text-themePrimaryColor m-auto hover:cursor-pointer" />{' '}
+            <FaGithub className="text-[54px] text-themePrimaryColor m-auto hover:cursor-pointer" />{' '}
+            <FaTelegram className="text-[54px] text-themePrimaryColor m-auto hover:cursor-pointer" />{' '}
+            <FaInstagramSquare className="text-[54px] text-themePrimaryColor m-auto hover:cursor-pointer" />{' '}
+            <BiLogoGmail className="text-[54px] text-themePrimaryColor m-auto hover:cursor-pointer" />
           </div>
         </div>
         <div className="pl-10 line-contact relative whitespace-pre-wrap sm:pl-4 sm:ml-24 w-[50%] lg:w-1/3 pt-16 lg:pt-0">

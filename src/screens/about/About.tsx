@@ -7,8 +7,8 @@ export const About = () => {
   });
 
   return (
-    <div className="overflow-auto px-2 w-full flex items-center text-primaryColor pt-8">
-      <div className="h-about w-full xl:w-2/3">
+    <div className="overflow-hidden h-auto w-full flex items-center text-primaryColor">
+      <div className="w-full xl:w-2/3">
         <span className="html-tag">{'<html>'}</span>
         <br />
         <span className="html-tag pl-4">{'<body>'}</span>

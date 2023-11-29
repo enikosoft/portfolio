@@ -47,7 +47,7 @@ export default {
         cfProject: "url('assets/images/cf-logo.webp')",
       },
       boxShadow: {
-        technologiesCard: `2px 2px 10px 0px theme(colors.themePrimaryColor)`,
+        technologiesCard: `0px 0px 10px 1px theme(colors.themePrimaryColor)`,
       },
     },
   },

@@ -1,19 +1,8 @@
-import {Theme, ThemeContext, ThemeContextInterface} from 'providers/theme';
-import {useContext} from 'react';
-
-import {CgDarkMode} from 'react-icons/cg';
 import {GrSearch} from 'react-icons/gr';
 import {useMediaQuery} from 'react-responsive';
 import {mediaBreakpoints} from 'responsive';
 
 export const Header = () => {
-  const {theme, toggleTheme} = useContext(ThemeContext) as ThemeContextInterface;
-
-  const handleTheme = () => {
-    const nextTheme = theme === Theme.LIGHT ? Theme.BLUE : Theme.LIGHT;
-    toggleTheme(nextTheme);
-  };
-
   const mobileAndTablet = useMediaQuery({
     query: `(max-width: ${mediaBreakpoints.xl}px)`,
   });
@@ -29,10 +18,6 @@ export const Header = () => {
         <span className="h-3 w-3 rounded-full bg-red-500" />
         <span className="h-3 w-3 rounded-full bg-yellow-500" />
         <span className="h-3 w-3 rounded-full bg-green-500" />
-      </div>
-
-      <div className="absolute right-3">
-        <CgDarkMode onClick={handleTheme} />
       </div>
     </section>
   );

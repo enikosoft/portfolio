@@ -1,20 +1,26 @@
 import {Footer, Header, LeftBar, TabBar} from 'components';
 import {ThemeProvider} from 'providers/theme';
+import {useMediaQuery} from 'react-responsive';
 import {Outlet} from 'react-router-dom';
+import {mediaBreakpoints} from 'responsive';
 
 export const Layout = () => {
+  const mobileAndTablet = useMediaQuery({
+    query: `(max-width: ${mediaBreakpoints.xl}px)`,
+  });
+
   return (
     <ThemeProvider>
       <div className="flex h-[100svh] w-full flex-col">
         <Header />
 
         <section className="flex h-content w-full xl:flex-row flex-col-reverse overflow-hidden">
-          <div className="min-w-full h-10 bg-bgColor xl:min-w-[48px] xl:h-content"></div>
+          {!mobileAndTablet && <div className="bg-bgColor min-w-[48px] h-content"></div>}
           <LeftBar />
-          <section className="h-full w-full bg-bgColor xl:ml-[288px]">
+          <section className="overflow-hidden main-window relative h-full w-full bg-bgColor xl:ml-[288px]">
             <TabBar />
 
-            <main className="page-wrapper pl-2 sm:pl-10 px-2">
+            <main className="page-wrapper sm:pl-10 px-2 pt-4">
               <Outlet />
             </main>
           </section>

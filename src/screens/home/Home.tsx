@@ -17,7 +17,7 @@ export const Home = () => {
   };
 
   return (
-    <div className="xl:pt-20 md:pb-40 lg:pb-40 xl:pb-0 flex items-center justify-center sm:px-20 xl:flex-row flex-col-reverse">
+    <div className="xl:pt-20 lg:pb-40 xl:pb-0 flex items-center justify-center sm:px-20 xl:flex-row flex-col-reverse">
       <div className="flex items-center xl:items-end flex-col py-10 xl:w-1/2 w-full text-xl">
         <div className="w-fit">
           <p className="text-xl text-themePrimaryColor">
