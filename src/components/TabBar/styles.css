@@ -1,0 +1,21 @@
+.hamburger-menu {
+  @apply relative top-0 right-0 border-none outline-none h-10 w-10 block cursor-pointer z-50;
+}
+
+.line-1,
+.line-2,
+.line-3 {
+  @apply w-6 h-0.5 bg-primaryColor mx-1 my-2 transition-all duration-300;
+}
+
+.hamburger-menu.active .line-1 {
+  @apply transform -rotate-45 translate-x-0 translate-y-2;
+}
+
+.hamburger-menu.active .line-2 {
+  @apply opacity-0;
+}
+
+.hamburger-menu.active .line-3 {
+  @apply transform rotate-45 translate-x-0 -translate-y-3;
+}
