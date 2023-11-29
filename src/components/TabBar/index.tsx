@@ -1,2 +1,2 @@
-export * from "./MenuResponsive";
-export * from "./TabBar";
+export * from './MenuResponsive';
+export * from './TabBar';

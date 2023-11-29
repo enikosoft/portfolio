@@ -1,7 +1,7 @@
-import { Footer, Header, LeftBar, TabBar } from "components";
-import { AppProvider } from "providers/application";
-import { ThemeProvider } from "providers/theme";
-import { Outlet } from "react-router-dom";
+import {Footer, Header, LeftBar, TabBar} from 'components';
+import {AppProvider} from 'providers/application';
+import {ThemeProvider} from 'providers/theme';
+import {Outlet} from 'react-router-dom';
 
 export const Layout = () => {
   return (

@@ -1,9 +1,9 @@
 /** @type {import('tailwindcss').Config} */
-import plugin from "tailwindcss/plugin";
+import plugin from 'tailwindcss/plugin';
 
 export default {
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
-  darkMode: "class",
+  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
@@ -30,16 +30,16 @@ export default {
         tabBarBorderColor: `var(--tabBarBorderColor)`,
       },
       fontFamily: {
-        code: ["Source Code Pro", "sans-serif"],
-        nunito: ["Nunito", "sans-serif"],
-        laBelleAurore: ["La Belle Aurore", "cursive"],
+        code: ['Source Code Pro', 'sans-serif'],
+        nunito: ['Nunito', 'sans-serif'],
+        laBelleAurore: ['La Belle Aurore', 'cursive'],
       },
       height: {
-        header: "48px",
-        footer: "24px",
-        content: "calc(100vh - 72px)",
-        about: "calc(80vh)",
-        projects: "calc(85vh)",
+        header: '48px',
+        footer: '24px',
+        content: 'calc(100vh - 72px)',
+        about: 'calc(80vh)',
+        projects: 'calc(85vh)',
       },
       backgroundImage: {
         photo: "url('./src/assets/images/photo.png')",
@@ -52,12 +52,12 @@ export default {
     },
   },
   plugins: [
-    plugin(function ({ addVariant, addBase }) {
-      addVariant("blue", ".blue &");
+    plugin(function ({addVariant, addBase}) {
+      addVariant('blue', '.blue &');
       addBase({
-        h1: { fontSize: "44px", lineHeight: "45px" },
-        h2: { fontSize: "40px" },
-        h3: { fontSize: "35px" },
+        h1: {fontSize: '44px', lineHeight: '45px'},
+        h2: {fontSize: '40px'},
+        h3: {fontSize: '35px'},
       });
     }),
   ],

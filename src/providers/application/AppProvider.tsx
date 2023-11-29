@@ -1,7 +1,7 @@
-import { useState } from "react";
-import AppContext from "./AppContext";
+import {ReactNode, useState} from 'react';
+import AppContext from './AppContext';
 
-export const AppProvider = ({ children }) => {
+export const AppProvider = ({children}: {children: ReactNode}) => {
   const [isResponsiveTabBar, setResponsiveTabBar] = useState(false);
 
   const state = {

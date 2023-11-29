@@ -1,20 +1,18 @@
-import { useContext, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import {useContext, useState} from 'react';
+import {Link, useLocation} from 'react-router-dom';
 
-import { FaFolder, FaFolderOpen } from "react-icons/fa";
-import { IoIosArrowDown, IoIosArrowForward } from "react-icons/io";
+import {FaFolder, FaFolderOpen} from 'react-icons/fa';
+import {IoIosArrowDown, IoIosArrowForward} from 'react-icons/io';
 
-import appContext, { AppContext } from "providers/application/AppContext";
-import { routesLinkItems } from "providers/routes";
-import { twMerge } from "tailwind-merge";
+import appContext, {AppContext} from 'providers/application/AppContext';
+import {routesLinkItems} from 'providers/routes';
+import {twMerge} from 'tailwind-merge';
 
 export const LeftBar = () => {
-  const { pathname } = useLocation();
+  const {pathname} = useLocation();
 
   const [open, setOpen] = useState<boolean>(true);
-  const { isResponsiveTabBar, setResponsiveTabBar } = useContext(
-    appContext,
-  ) as AppContext;
+  const {isResponsiveTabBar, setResponsiveTabBar} = useContext(appContext) as AppContext;
 
   return (
     <aside
@@ -25,13 +23,11 @@ export const LeftBar = () => {
         xl:left-12 xl:right-auto xl:w-72
         xl:border-r xl:border-t-0
         xl:border-l-leftSideBorder xl:border-r-leftSideBorder xl:transition-none`,
-        ` ${isResponsiveTabBar ? "w-80" : "w-0"}`,
+        ` ${isResponsiveTabBar ? 'w-80' : 'w-0'}`
       )}
     >
       <div className="w-full px-4 py-2">
-        <div className="block font-code font-light text-textEditorColor">
-          EXPLORER
-        </div>
+        <div className="block font-code font-light text-textEditorColor">EXPLORER</div>
       </div>
       <button
         type="button"
@@ -48,10 +44,10 @@ export const LeftBar = () => {
           {routesLinkItems.map((item, key) => (
             <Link
               key={key}
-              to={item?.path || "/"}
+              to={item?.path || '/'}
               onClick={() => setResponsiveTabBar(!isResponsiveTabBar)}
               className={`${
-                pathname === item?.path && "active"
+                pathname === item?.path && 'active'
               } flex items-center gap-2 px-14 py-1 text-base text-textEditorColor hover:bg-textEditorHoverBg hover:text-textEditorHoverColor [&.active]:bg-themePrimaryColor [&.active]:text-tabBarActiveTextColor`}
             >
               {item.logo}

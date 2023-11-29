@@ -1,7 +1,7 @@
 export const enum Theme {
-  DARK = "dark",
-  BLUE = "blue",
-  LIGHT = "light",
+  DARK = 'dark',
+  BLUE = 'blue',
+  LIGHT = 'light',
 }
 
 export interface ThemeContextInterface {
