@@ -12,11 +12,11 @@ export const Footer = () => {
   const sidebarContentEl = document.getElementsByClassName('main-window')[0];
 
   return (
-    <div className="w-full h-[32px] xl:h-[24px] bg-themePrimaryColor relative">
+    <div className="w-full h-[48px] xl:h-[24px] bg-themePrimaryColor relative">
       {themeDialogOpen && createPortal(<ThemeDialog setThemeDialogOpen={setThemeDialogOpen} />, sidebarContentEl)}
       <div
         onClick={() => setThemeDialogOpen(!themeDialogOpen)}
-        className="flex flex-row justify-end items-center px-2 hover:cursor-pointer"
+        className="flex h-full flex-row justify-end items-center px-2 hover:cursor-pointer"
       >
         <MdOutlineDarkMode className="pr-1 text-primaryColor text-xl" />
         <span className="text-primaryColor">{theme}</span>

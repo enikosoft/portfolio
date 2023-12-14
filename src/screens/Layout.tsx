@@ -17,7 +17,7 @@ export const Layout = () => {
         <section className="flex h-content w-full xl:flex-row flex-col-reverse overflow-hidden">
           {!mobileAndTablet && <div className="bg-bgColor min-w-[48px] h-content"></div>}
           <LeftBar />
-          <section className="overflow-hidden main-window h-full w-full bg-bgColor xl:ml-[288px]">
+          <section className="overflow-hidden pb-2 h-full w-full bg-bgColor">
             <TabBar />
 
             <main className="page-wrapper px-4 sm:px-8 pt-4">

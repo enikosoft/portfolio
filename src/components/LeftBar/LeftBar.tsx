@@ -25,7 +25,7 @@ export const LeftBar = () => {
   return (
     <aside
       className={twMerge(
-        `overflow-x border-t-1 fixed sm:block left-auto right-0 top-0 xl:top-12 z-40 h-[100svh] border border-b-0
+        `overflow-x border-t-1 fixed xl:static sm:block left-auto right-0 top-0 xl:top-12 z-40 h-[100svh] border border-b-0
         border-r-0 border-l-headerBorderColor border-r-leftSideBorder border-t-headerBorderColor
         bg-bgColor transition-all duration-200 ease-in
         xl:left-12 xl:right-auto xl:w-72
