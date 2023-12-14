@@ -5,7 +5,6 @@ import {MdClose} from 'react-icons/md';
 import {useMediaQuery} from 'react-responsive';
 import {Link, useLocation, useNavigate} from 'react-router-dom';
 import {mediaBreakpoints} from 'responsive';
-import MenuResponsive from './MenuResponsive';
 
 export const TabBar = () => {
   const {pathname, state} = useLocation();
@@ -61,7 +60,6 @@ export const TabBar = () => {
           return getLink(item, key);
         })}
       </nav>
-      <MenuResponsive />
     </header>
   );
 };

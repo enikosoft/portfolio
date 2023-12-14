@@ -29,6 +29,9 @@ export default {
         tabBarActiveBgColor: `var(--tabBarActiveBgColor)`,
         tabBarBorderColor: `var(--tabBarBorderColor)`,
       },
+      opacity: {
+        'c8': '0.08',
+      },
       fontFamily: {
         code: ['Source Code Pro', 'sans-serif'],
         nunito: ['Nunito', 'sans-serif'],
@@ -36,8 +39,7 @@ export default {
       },
       height: {
         header: '48px',
-        footer: '24px',
-        content: 'calc(100vh - 72px)',
+        content: '100svh',
         about: 'calc(80vh)',
         projects: 'calc(85vh)',
       },
@@ -54,6 +56,8 @@ export default {
   plugins: [
     plugin(function ({addVariant, addBase}) {
       addVariant('blue', '.blue &');
+      addVariant('light', '.light &');
+
       addBase({
         h1: {fontSize: '44px', lineHeight: '45px'},
         h2: {fontSize: '40px'},

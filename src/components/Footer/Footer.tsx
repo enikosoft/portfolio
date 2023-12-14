@@ -12,7 +12,7 @@ export const Footer = () => {
   const sidebarContentEl = document.getElementsByClassName('main-window')[0];
 
   return (
-    <div className="w-full h-footer bg-themePrimaryColor relative">
+    <div className="w-full h-[32px] xl:h-[24px] bg-themePrimaryColor relative">
       {themeDialogOpen && createPortal(<ThemeDialog setThemeDialogOpen={setThemeDialogOpen} />, sidebarContentEl)}
       <div
         onClick={() => setThemeDialogOpen(!themeDialogOpen)}
