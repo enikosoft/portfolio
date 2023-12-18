@@ -25,10 +25,10 @@ export const LeftBar = () => {
   return (
     <aside
       className={twMerge(
-        `overflow-x border-t-1 fixed xl:static sm:block left-auto right-0 top-0 xl:top-12 z-40 h-[100svh] border border-b-0
-        border-r-0 border-l-headerBorderColor border-r-leftSideBorder border-t-headerBorderColor
-        bg-bgColor transition-all duration-200 ease-in
-        xl:left-12 xl:right-auto xl:w-72
+        `overflow-x border-t-1 fixed left-auto right-0 top-0 z-40 h-[100svh] border border-b-0 border-r-0 border-l-headerBorderColor border-r-leftSideBorder
+        border-t-headerBorderColor bg-bgColor transition-all duration-200
+        ease-in sm:block xl:static xl:left-12
+        xl:right-auto xl:top-12 xl:w-72
         xl:border-r xl:border-t-0
         xl:border-l-leftSideBorder xl:border-r-leftSideBorder xl:transition-none`,
         ` ${isResponsiveTabBar ? 'w-80' : 'w-0'}`
@@ -56,14 +56,14 @@ export const LeftBar = () => {
               onClick={() => setResponsiveTabBar(!isResponsiveTabBar)}
               className={`${
                 pathname === item?.path && 'active'
-              } flex relative items-center gap-2 px-14 py-1 text-base text-textEditorColor hover:bg-textEditorHoverBg hover:text-textEditorHoverColor [&.active]:bg-themePrimaryColor [&.active]:text-tabBarActiveTextColor`}
+              } relative flex items-center gap-2 px-14 py-1 text-base text-textEditorColor hover:bg-textEditorHoverBg hover:text-textEditorHoverColor [&.active]:bg-themePrimaryColor [&.active]:text-tabBarActiveTextColor`}
             >
               {item.logo}
               {item.title}
               {item?.closable && (
                 <MdClose
                   onClick={handleCloseCVPreviewer}
-                  className="text-xl absolute right-4 text-textEditorColor hover:cursor-pointer"
+                  className="absolute right-4 text-xl text-textEditorColor hover:cursor-pointer"
                 />
               )}
             </Link>

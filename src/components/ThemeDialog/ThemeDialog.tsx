@@ -11,16 +11,16 @@ export const ThemeDialog = ({setThemeDialogOpen}: {setThemeDialogOpen: Dispatch<
   };
 
   return (
-    <div className="right-3 bottom-3 w-[95%] sm:w-[480px] bg-bgColor h-auto absolute rounded-lg border-1 border-themePrimaryColor shadow-technologiesCard">
+    <div className="border-1 absolute bottom-12 right-2 h-auto w-[95%] rounded-lg border-themePrimaryColor bg-bgColor shadow-technologiesCard sm:bottom-8 sm:w-[480px]">
       <div className="flex flex-row justify-between px-4 pt-2">
-        <p className="text-primaryColor text-md font-nunito">Choose theme:</p>
+        <p className="text-md font-nunito text-primaryColor">Choose theme:</p>
         <MdClose className="text-primaryColor hover:cursor-pointer" onClick={() => setThemeDialogOpen(false)} />
       </div>
       <div className="flex flex-row justify-center">
         {Object.values(Theme).map((item, key) => {
           const selected = theme === item;
           return (
-            <div key={key} className="px-4 py-2 text-primaryColor text-lg text-center">
+            <div key={key} className="px-4 py-2 text-center text-lg text-primaryColor">
               <button
                 onClick={handleSelectTheme(item)}
                 disabled={selected}

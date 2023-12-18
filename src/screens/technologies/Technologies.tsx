@@ -5,11 +5,11 @@ import pdf from 'assets/EvgenNikolenko-JSdev.pdf';
 
 export const Technologies = () => {
   return (
-    <div className="flex justify-center items-center flex-col sm:px-1 w-full">
-      <div className="flex flex-row align-middle items-center pt-4 pb-6">
+    <div className="flex w-full flex-col items-center justify-center sm:px-1">
+      <div className="flex flex-row items-center pb-6 pt-4 align-middle">
         <span className="html-tag">{'<b>'} </span>
-        <p className="px-2 font-bold text-primaryColor text-xl sm:text-2xl pb-2">
-          Professional <span className="text-xl sm:text-2xl text-themePrimaryColor">Skillset</span>
+        <p className="px-2 pb-2 text-xl font-bold text-primaryColor sm:text-2xl">
+          Professional <span className="text-xl text-themePrimaryColor sm:text-2xl">Skillset</span>
         </p>
         <span className="html-tag">{'</b>'}</span>
       </div>
@@ -20,21 +20,21 @@ export const Technologies = () => {
             {skill.name && (
               <div className="flex flex-row pb-6 pt-12">
                 <span className="html-tag">{'<span>'} </span>
-                <p className="px-2 font-bold text-primaryColor text-lg">{skill.name}</p>
+                <p className="px-2 text-lg font-bold text-primaryColor">{skill.name}</p>
                 <span className="html-tag">{'</span>'}</span>
               </div>
             )}
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xxl:grid-cols-4 gap-6">
+            <div className="xxl:grid-cols-4 grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
               {skill.items.map((item, index) => (
-                <div key={index} className="rounded-lg flex justify-center flex-col items-center w-full relative">
-                  <div className="before:bg-white before:opacity-c8 before:absolute before:inset-0 before:rounded-lg"></div>
-                  <div className="flex flex-row items-center relative w-full px-4 py-4 sm:py-6 sm:p-8">
-                    <div className="bg h-12 w-12 sm:h-16 sm:w-16">{item.icon}</div>
-                    <div className="text-primaryColor pl-4">
-                      <span className="font-semibold xl:font-bold text-base h-7 xl:text-2xl">{item.label}</span>
+                <div key={index} className="relative flex w-full flex-col items-center justify-center rounded-lg">
+                  <div className="before:absolute before:inset-0 before:rounded-lg before:bg-white before:opacity-c8"></div>
+                  <div className="relative flex w-full flex-row items-center px-4 py-4 sm:p-8 sm:py-6">
+                    <div className="h-12 w-12 sm:h-16 sm:w-16">{item.icon}</div>
+                    <div className="pl-4 text-primaryColor">
+                      <span className="h-7 text-base font-semibold xl:text-2xl xl:font-bold">{item.label}</span>
                       {item?.expirience && (
-                        <div className="flex flex-row sm:flex-col font-light text-sm xl:text-base pt-1 sm:pt-2">
+                        <div className="flex flex-row pt-1 text-sm font-light sm:flex-col sm:pt-2 xl:text-base">
                           <span className="mr-2 sm:mr-1">Expirience:</span>
                           <span>{item?.expirience} years</span>
                         </div>
@@ -48,8 +48,8 @@ export const Technologies = () => {
         ))}
       </div>
 
-      <div className="w-full mt-12">
-        <i className="text-lg fond-light text-primaryColor pr-4">More information</i>
+      <div className="mt-12 w-full">
+        <i className="fond-light pr-4 text-lg text-primaryColor">More information</i>
         <Link to={pdf} target="_blank" download>
           <button className="btn">Download CV</button>
         </Link>

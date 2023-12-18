@@ -17,15 +17,15 @@ export const Home = () => {
   };
 
   return (
-    <div className="xl:pt-20 lg:pb-40 xl:pb-0 flex items-center justify-center sm:px-20 xl:flex-row flex-col-reverse">
-      <div className="flex items-center xl:items-end flex-col py-10 xl:w-1/2 w-full text-xl">
+    <div className="flex flex-col-reverse items-center justify-center sm:px-20 lg:pb-40 xl:flex-row xl:pb-0 xl:pt-20">
+      <div className="flex w-full flex-col items-center py-10 text-xl xl:w-1/2 xl:items-end">
         <div className="w-fit">
           <p className="text-xl text-themePrimaryColor">
             <span className="span">{'<'}</span>Hi 👋 my name is
           </p>
 
-          <h1 className="font-bold text-primaryColor opacity-70 pt-2 text-3xl sm:text-5xl">
-            Evgen Nikolenko <span className="text-3xl sm:text-5xl font-extrabold text-themePrimaryColor">{'/>'}</span>{' '}
+          <h1 className="pt-2 text-3xl font-bold text-primaryColor opacity-70 sm:text-5xl">
+            Evgen Nikolenko <span className="text-3xl font-extrabold text-themePrimaryColor sm:text-5xl">{'/>'}</span>{' '}
           </h1>
           <TypeAnimation
             sequence={['Full-Stack Developer', 1000, 'React Developer', 1000, 'Back-End Developer', 1000]}
@@ -40,13 +40,13 @@ export const Home = () => {
             }}
             repeat={Infinity}
           />
-          <div className="w-full mt-10 flex flex-col sm:flex-row">
+          <div className="mt-10 flex w-full flex-col sm:flex-row">
             <Link to={pdf} target="_blank" download>
-              <button className="w-full sm:w-fit rounded btn mb-8 sm:mb-0 mr-10 px-12 py-4">Download CV</button>
+              <button className="btn mb-8 mr-10 w-full rounded px-12 py-4 sm:mb-0 sm:w-fit">Download CV</button>
             </Link>
 
             <button
-              className="w-full sm:w-fit rounded btn-secondary px-12 py-4 hover:brightness-110"
+              className="btn-secondary w-full rounded px-12 py-4 hover:brightness-110 sm:w-fit"
               onClick={handleShowCV}
             >
               Open CV
@@ -54,8 +54,8 @@ export const Home = () => {
           </div>
         </div>
       </div>
-      <div className="static: xl:relative top-0 xl:top-[-64px] xl:w-1/2 w-ful justify-center">
-        <div className="bg-cover bg-bottom bg-photo w-[300px] h-[300px] md:w-[400px] md:h-[400px] xl:w-[500px] xl:h-[580px]"></div>
+      <div className="static: w-ful top-0 justify-center xl:relative xl:top-[-64px] xl:w-1/2">
+        <div className="h-[300px] w-[300px] bg-photo bg-cover bg-bottom md:h-[400px] md:w-[400px] xl:h-[580px] xl:w-[500px]"></div>
       </div>
     </div>
   );

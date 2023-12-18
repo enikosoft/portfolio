@@ -42,7 +42,7 @@ export const skillset = [
       },
       {
         label: 'Next.js',
-        icon: <SiNextdotjs className="text-[48px] sm:text-[64px] light:text-black text-white" />,
+        icon: <SiNextdotjs className="text-[48px] text-white light:text-black sm:text-[64px]" />,
         expirience: 1.5,
       },
       {
@@ -128,12 +128,12 @@ export const skillset = [
       },
       {
         label: 'Apple Pay / Google Pay',
-        icon: <MdPayment className="text-[48px] sm:text-[64px] light:text-black text-white" />,
+        icon: <MdPayment className="text-[48px] text-white light:text-black sm:text-[64px]" />,
         expirience: null,
       },
       {
         label: 'Google API (Map, GA4 ...)',
-        icon: <FaGoogle className="text-[48px] sm:text-[64px] light:text-black text-white" />,
+        icon: <FaGoogle className="text-[48px] text-white light:text-black sm:text-[64px]" />,
         expirience: null,
       },
 

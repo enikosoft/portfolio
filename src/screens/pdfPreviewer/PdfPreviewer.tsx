@@ -25,19 +25,19 @@ export const PdfPriever = () => {
 
   return (
     <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.js">
-      <div className="p-2 overflow-hidden h-full">
-        <div className="flex justify-center flex-row items-start">
+      <div className="h-full overflow-hidden p-2">
+        <div className="flex flex-row items-start justify-center">
           <EnterFullScreen>
             {(props: RenderEnterFullScreenProps) => (
               <>
                 {mobile ? (
                   <Link to={pdf} target="_blank" download>
-                    <button className="btn mr-2 mb-2 h-8">
+                    <button className="btn mb-2 mr-2 h-8">
                       <IoMdDownload />{' '}
                     </button>
                   </Link>
                 ) : (
-                  <button className="btn mr-2 mb-2 h-8" onClick={props.onClick}>
+                  <button className="btn mb-2 mr-2 h-8" onClick={props.onClick}>
                     <BsArrowsFullscreen />
                   </button>
                 )}
@@ -45,7 +45,7 @@ export const PdfPriever = () => {
             )}
           </EnterFullScreen>
 
-          <div className="flex flex-row pb-2 h-8">
+          <div className="flex h-8 flex-row pb-2">
             <ZoomOut>
               {(props: RenderZoomOutProps) => (
                 <button className="btn h-8" onClick={props.onClick}>
@@ -54,7 +54,7 @@ export const PdfPriever = () => {
               )}
             </ZoomOut>
 
-            <div className="text-textEditorColor px-2 h-8 pt-1">
+            <div className="h-8 px-2 pt-1 text-textEditorColor">
               <CurrentScale>
                 {(props: RenderCurrentScaleProps) => <>{`${Math.round(props.scale * 100)}%`}</>}
               </CurrentScale>

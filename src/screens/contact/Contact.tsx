@@ -9,11 +9,11 @@ export const Contact = () => {
   const contacts = [
     {
       field: 'email',
-      component: <input type="email" className="bg-transparent active:border-none focus-visible:outline-none pl-2" />,
+      component: <input type="email" className="bg-transparent pl-2 focus-visible:outline-none active:border-none" />,
     },
     {
       field: 'subject',
-      component: <input className="bg-transparent active:border-none focus-visible:outline-none pl-2" />,
+      component: <input className="bg-transparent pl-2 focus-visible:outline-none active:border-none" />,
     },
     {
       field: 'message',
@@ -21,7 +21,7 @@ export const Contact = () => {
         <div className="w-full">
           <TextareaAutosize
             minRows={3}
-            className="text-primaryColor bg-transparent active:border-none focus-visible:outline-none pl-2 resize-none overflow-auto w-92"
+            className="w-92 resize-none overflow-auto bg-transparent pl-2 text-primaryColor focus-visible:outline-none active:border-none"
             maxRows={6}
             value={val}
             onChange={(ev) => setVal(ev.target.value)}
@@ -32,43 +32,43 @@ export const Contact = () => {
   ];
 
   return (
-    <div className="flex justify-center items-center flex-col w-full">
-      <div className="flex flex-row align-middle items-center pt-4">
+    <div className="flex w-full flex-col items-center justify-center">
+      <div className="flex flex-row items-center pt-4 align-middle">
         <span className="html-tag">{'<b>'} </span>
-        <p className="px-2 font-bold text-primaryColor text-lg sm:text-2xl pb-2">
+        <p className="px-2 pb-2 text-lg font-bold text-primaryColor sm:text-2xl">
           Get in Touch
-          <span className="text-lg sm:text-2xl text-themePrimaryColor"> - Contact Me</span>
+          <span className="text-lg text-themePrimaryColor sm:text-2xl"> - Contact Me</span>
         </p>
         <span className="html-tag">{'</b>'}</span>
       </div>
-      <div className="flex flex-col lg:flex-row pt-8 lg:pt-32">
+      <div className="flex flex-col pt-8 lg:flex-row lg:pt-32">
         <div>
           <div className="flex flex-col items-center">
             <h3 className="font-bold text-primaryColor">FIND ME ON</h3>
             <p className="text-primaryColor">
               Please don`t hesitate to reach out to me{' '}
-              <span className="text-themePrimaryColor text-lg">and connect.</span>
+              <span className="text-lg text-themePrimaryColor">and connect.</span>
             </p>
           </div>
-          <div className="p-2 w-full grid grid-cols-5 gap-1 sm:gap-6 items-center">
-            <FaLinkedin className="text-[54px] text-themePrimaryColor m-auto hover:cursor-pointer" />{' '}
-            <FaGithub className="text-[54px] text-themePrimaryColor m-auto hover:cursor-pointer" />{' '}
-            <FaTelegram className="text-[54px] text-themePrimaryColor m-auto hover:cursor-pointer" />{' '}
-            <FaInstagramSquare className="text-[54px] text-themePrimaryColor m-auto hover:cursor-pointer" />{' '}
-            <BiLogoGmail className="text-[54px] text-themePrimaryColor m-auto hover:cursor-pointer" />
+          <div className="grid w-full grid-cols-5 items-center gap-1 p-2 sm:gap-6">
+            <FaLinkedin className="m-auto text-[54px] text-themePrimaryColor hover:cursor-pointer" />{' '}
+            <FaGithub className="m-auto text-[54px] text-themePrimaryColor hover:cursor-pointer" />{' '}
+            <FaTelegram className="m-auto text-[54px] text-themePrimaryColor hover:cursor-pointer" />{' '}
+            <FaInstagramSquare className="m-auto text-[54px] text-themePrimaryColor hover:cursor-pointer" />{' '}
+            <BiLogoGmail className="m-auto text-[54px] text-themePrimaryColor hover:cursor-pointer" />
           </div>
         </div>
-        <div className="pl-10 line-contact relative whitespace-pre-wrap sm:pl-4 sm:ml-24 w-[50%] lg:w-1/3 pt-16 lg:pt-0">
+        <div className="line-contact relative w-[50%] whitespace-pre-wrap pl-10 pt-16 sm:ml-24 sm:pl-4 lg:w-1/3 lg:pt-0">
           <p className="text-xl text-themePrimaryColor">
             .contactMe<span className=" text-xl text-primaryColor">{' {'}</span>
           </p>
           {contacts.map(({field, component}) => (
-            <p className="flex pl-10 text-lg  line-contact text-primaryColor" key={field}>
+            <p className="line-contact flex pl-10  text-lg text-primaryColor" key={field}>
               {field}:{component}
             </p>
           ))}
-          <p className="text-xl line-contact text-primaryColor">{'}'}</p>
-          <button className="btn block lg:m-auto mt-8">Send Email</button>
+          <p className="line-contact text-xl text-primaryColor">{'}'}</p>
+          <button className="btn mt-8 block lg:m-auto">Send Email</button>
         </div>
       </div>
     </div>

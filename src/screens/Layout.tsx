@@ -14,13 +14,13 @@ export const Layout = () => {
       <div className="flex h-[100svh] w-full flex-col">
         <Header />
 
-        <section className="flex h-content w-full xl:flex-row flex-col-reverse overflow-hidden">
-          {!mobileAndTablet && <div className="bg-bgColor min-w-[48px] h-content"></div>}
+        <section className="flex h-content w-full flex-col-reverse overflow-hidden xl:flex-row">
+          {!mobileAndTablet && <div className="h-content min-w-[48px] bg-bgColor"></div>}
           <LeftBar />
-          <section className="overflow-hidden pb-2 h-full w-full bg-bgColor">
+          <section className="main-window h-full w-full overflow-hidden bg-bgColor pb-2">
             <TabBar />
 
-            <main className="page-wrapper px-4 sm:px-8 pt-4">
+            <main className="page-wrapper px-4 pt-4 sm:px-8">
               <Outlet />
             </main>
           </section>

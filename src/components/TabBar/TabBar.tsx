@@ -28,7 +28,7 @@ export const TabBar = () => {
       state={{historyPath: state?.historyPath}}
       className={`
         ${pathname === item?.path && 'active'}
-        relative flex items-center gap-2 border-b border-b-tabBarBorderColor border-r border-t border-r-tabBarBorderColor border-t-tabBarBgColor bg-tabBarBgColor px-6 py-2 text-base text-textEditorColor
+        relative flex items-center gap-2 border-b border-r border-t border-b-tabBarBorderColor border-r-tabBarBorderColor border-t-tabBarBgColor bg-tabBarBgColor px-6 py-2 text-base text-textEditorColor
         hover:bg-textEditorHoverBg hover:text-textEditorHoverColor
         [&.active]:border-t-2 [&.active]:border-solid [&.active]:border-b-[none] [&.active]:border-t-tabBarActiveBorderColor [&.active]:bg-tabBarActiveBgColor [&.active]:text-tabBarActiveTextColor`}
     >

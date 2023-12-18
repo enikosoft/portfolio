@@ -30,7 +30,7 @@ export default {
         tabBarBorderColor: `var(--tabBarBorderColor)`,
       },
       opacity: {
-        'c8': '0.08',
+        c8: '0.08',
       },
       fontFamily: {
         code: ['Source Code Pro', 'sans-serif'],
