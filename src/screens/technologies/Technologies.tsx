@@ -28,7 +28,7 @@ export const Technologies = () => {
             <div className="xxl:grid-cols-4 grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
               {skill.items.map((item, index) => (
                 <div key={index} className="relative flex w-full flex-col items-center justify-center rounded-lg">
-                  <div className="before:absolute before:inset-0 before:rounded-lg before:bg-white before:opacity-c8"></div>
+                  <div className="before:absolute before:inset-0 before:rounded-lg before:bg-white before:opacity-c8 before:light:bg-black"></div>
                   <div className="relative flex w-full flex-row items-center px-4 py-4 sm:p-8 sm:py-6">
                     <div className="h-12 w-12 sm:h-16 sm:w-16">{item.icon}</div>
                     <div className="pl-4 text-primaryColor">

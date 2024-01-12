@@ -40,12 +40,13 @@
   .page-wrapper {
     height: calc(100svh - 124px);
     overflow: auto;
-    padding-bottom: 16px;
+    padding-bottom: 24px;
+    overflow-x: hidden;
   }
   
   @media screen and (min-width: 1280px) {
     .page-wrapper {
-      height: calc(100svh - 106px);
+      height: calc(100svh - 110px);
       overflow: auto;
       padding-bottom: 16px;
     }
@@ -91,13 +92,52 @@
 }
 
 
+.theme-light {
+  --primaryColor: #201e1e;
+  --bgColor: #f0f0f0;
+  --leftSideBorder: #d4d3d5;
+
+  --textEditorColor: #424242;
+  --textEditorHoverColor: #FFF;
+  --textEditorHoverBg: #007cd2;
+
+  --headerBorderColor: #d4d3d5;
+
+
+  --tabBarBgColor: #e4e5e5;
+  --tabBarBorderColor: #d4d3d5;
+  --tabBarActiveBorderColor: #007cd2;
+  --tabBarActiveTextColor: #FFF;
+  --tabBarActiveBgColor: #007cd2;
+
+
+  --themePrimaryColor: #007cd2;
+  --themeButtonPrimaryColor: #0076cb;
+  --themeButtonSecondaryColor: #033151c5;
+}
 
 .theme-dark {
   --primaryColor: #FFFFFF;
-  --bgColor: #252A2E;
-  --leftSideBorder: #219fd5;
-  --textEditorColor: #6C8CAD;
+  --bgColor: #333138;
+  --leftSideBorder: #474649;
 
+  --textEditorColor: #c4dbf2;
+  --textEditorHoverColor: #373634;
+  --textEditorHoverBg: #dca503;
+
+  --headerBorderColor: #625c5c;
+
+
+  --tabBarBgColor: #1f2224;
+  --tabBarBorderColor: #474649;
+  --tabBarActiveBorderColor: #dca503;
+  --tabBarActiveTextColor: #FFFFFF;
+  --tabBarActiveBgColor: #c09104;
+
+
+  --themePrimaryColor: #dca503;
+  --themeButtonPrimaryColor: #c09104;
+  --themeButtonSecondaryColor: #7b7565;
 }
 
 .theme-blue {
@@ -118,11 +158,7 @@
   --tabBarActiveTextColor: #FFFFFF;
   --tabBarActiveBgColor: #153855;
 
-  /* --themePrimaryColor: #24566f; */
-
   --themePrimaryColor: #369FD5;
   --themeButtonPrimaryColor: #1e648a;
   --themeButtonSecondaryColor: #3a3c41;
-
-  
 }

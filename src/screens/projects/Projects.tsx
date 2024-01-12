@@ -1,6 +1,6 @@
 import {useState} from 'react';
 import ProjectCard from './ProjectCard';
-import {comerciaProjects} from './utils';
+import {comerciaProjects, customProjects} from './utils';
 
 import pdf from 'assets/EvgenNikolenko-JSdev.pdf';
 import {Link} from 'react-router-dom';
@@ -45,7 +45,11 @@ export const Projects = () => {
             ))}
           </div>
         ) : (
-          <div className="bg-green-100"></div>
+          <div className="xxl:grid-cols-3 grid grid-cols-1 gap-6 md:grid-cols-2">
+            {customProjects.map((project, index) => (
+              <ProjectCard key={index} project={project} />
+            ))}
+          </div>
         )}
       </>
       <div className="mt-12 w-full">

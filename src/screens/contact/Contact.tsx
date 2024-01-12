@@ -1,7 +1,6 @@
 import {useState} from 'react';
-import {BiLogoGmail} from 'react-icons/bi';
-import {FaGithub, FaInstagramSquare, FaLinkedin, FaTelegram} from 'react-icons/fa';
 import TextareaAutosize from 'react-textarea-autosize';
+import {socialNetworks} from './utils';
 
 export const Contact = () => {
   const [val, setVal] = useState('');
@@ -51,11 +50,7 @@ export const Contact = () => {
             </p>
           </div>
           <div className="grid w-full grid-cols-5 items-center gap-1 p-2 sm:gap-6">
-            <FaLinkedin className="m-auto text-[54px] text-themePrimaryColor hover:cursor-pointer" />{' '}
-            <FaGithub className="m-auto text-[54px] text-themePrimaryColor hover:cursor-pointer" />{' '}
-            <FaTelegram className="m-auto text-[54px] text-themePrimaryColor hover:cursor-pointer" />{' '}
-            <FaInstagramSquare className="m-auto text-[54px] text-themePrimaryColor hover:cursor-pointer" />{' '}
-            <BiLogoGmail className="m-auto text-[54px] text-themePrimaryColor hover:cursor-pointer" />
+            {socialNetworks().map((item) => item)}
           </div>
         </div>
         <div className="line-contact relative w-[50%] whitespace-pre-wrap pl-10 pt-16 sm:ml-24 sm:pl-4 lg:w-1/3 lg:pt-0">

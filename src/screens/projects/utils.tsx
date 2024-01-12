@@ -12,13 +12,18 @@ import {
   SiTypescript,
 } from 'react-icons/si';
 
+import btfLofo from 'assets/images/btf-logo.png';
 import cfLofo from 'assets/images/cfLogo.png';
+import s2eLofo from 'assets/images/s2e-logo.webp';
+import viktreLofo from 'assets/images/viktre-logo.jpeg';
+import weatherAppLofo from 'assets/images/weatherApp.jpeg';
 
 export interface Project {
   name: string;
   description: string;
   img: string;
   stack: JSX.Element[];
+  url?: string;
 }
 
 export const comerciaProjects: Project[] = [
@@ -42,7 +47,7 @@ export const comerciaProjects: Project[] = [
     name: 'BTF',
     description: `Team size: 5. Platform that supports athletes in their development on and off the field by giving them the tools to understand who they are and share
     the context to their performance and their growth as a human being with the people most important to them on their journey.`,
-    img: cfLofo,
+    img: btfLofo,
     stack: [
       <SiTypescript key="ts" color="#2F75C0" className="text-[28px]" />,
       <FaReact key="react" color="#5ED4F4" className="text-[28px]" />,
@@ -66,7 +71,7 @@ export const comerciaProjects: Project[] = [
     applications (e.g Facebook Messenger, iMessage,
     Amazon Echo, Google Home, etc.).
     `,
-    img: cfLofo,
+    img: s2eLofo,
     stack: [
       <FaReact key="react" color="#5ED4F4" className="text-[28px]" />,
       <FaNodeJs key="node" color="#86cf35" className="text-[28px]" />,
@@ -79,12 +84,25 @@ export const comerciaProjects: Project[] = [
     description: `Team size: 2. The main goal of the project is to allow a
         user to make donations on the following social projects. My responsibilities were creating new functionality, creating new site versions (their
       maintaining), bugs fixing, working with the Facebook application, add new requests to DB and fixing on the server side.`,
-    img: cfLofo,
+    img: viktreLofo,
     stack: [
       <SiJavascript key="js" color="#E9D54B" className="text-[28px]" />,
       <FaReact key="react" color="#5ED4F4" className="text-[28px]" />,
       <FaNodeJs key="node" color="#86cf35" className="text-[28px]" />,
       <SiMongodb key="mongodb" color="#2c913f" className="text-[28px]" />,
+    ],
+  },
+];
+
+export const customProjects: Project[] = [
+  {
+    name: 'Weather React App',
+    url: 'https://develop.d32z2z7ii5cmj4.amplifyapp.com/',
+    description: `React/Typescript/StyledComponent/zustand. You can find weather and current location time for any cities, searched by Google Place Api.`,
+    img: weatherAppLofo,
+    stack: [
+      <SiTypescript key="ts" color="#2F75C0" className="text-[28px]" />,
+      <FaReact key="react" color="#5ED4F4" className="text-[28px]" />,
     ],
   },
 ];

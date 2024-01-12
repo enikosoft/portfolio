@@ -17,7 +17,7 @@ const ProjectCard = ({project, isDialog = false, isOpenDialog, toggleShowMore}: 
   return (
     <div className="relative flex w-full flex-col items-center justify-center rounded-lg px-4 py-4 sm:p-8 sm:py-6">
       {!isDialog && (
-        <div className="before:absolute before:inset-0 before:rounded-lg before:bg-white before:opacity-c8"></div>
+        <div className="before:absolute before:inset-0 before:rounded-lg before:bg-white before:opacity-c8 before:light:bg-black"></div>
       )}
       <div className="relative flex w-full flex-row items-center">
         <div className="flex h-24 w-24 items-center rounded-sm bg-white">
@@ -25,14 +25,13 @@ const ProjectCard = ({project, isDialog = false, isOpenDialog, toggleShowMore}: 
         </div>
         <div className="pl-4 text-primaryColor">
           <span className="h-7 text-base font-semibold xl:text-2xl xl:font-bold">{project.name}</span>
-
           <div className="pt-1 text-sm font-light sm:pt-2 xl:text-base">
             <span>Main stack:</span>
             <div className="flex flex-row">
               {project.stack.map((item, key) => (
                 <div
                   key={key}
-                  className="group relative mx-0 my-2 flex h-9 w-9 rounded-sm p-0 first:ml-0 hover:cursor-pointer hover:bg-white sm:mx-1 sm:p-1"
+                  className="group relative mx-0 my-2 flex h-9 w-9 items-center justify-center rounded-sm p-0 first:ml-0 hover:cursor-pointer hover:bg-white sm:mx-1 sm:p-1"
                 >
                   {item}
                   <span
@@ -48,7 +47,18 @@ font-semibold text-black opacity-0 transition-opacity group-hover:opacity-100"
         </div>
       </div>
       <div className="relative pb-4">
-        <p className="mt-8 pb-2 text-base text-primaryColor">{isDialog ? project.description : displayedText}</p>
+        {project?.url && (
+          <a
+            className="text-base text-themePrimaryColor underline"
+            href={project?.url}
+            target="_blank"
+            rel="noreferrer"
+          >
+            Open application
+          </a>
+        )}
+
+        <p className="mt-4 pb-2 text-base text-primaryColor">{isDialog ? project.description : displayedText}</p>
 
         {project.description.length > 3 && !isDialog && (
           <button
