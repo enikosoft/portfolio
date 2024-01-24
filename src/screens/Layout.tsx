@@ -1,5 +1,6 @@
 import {Footer, Header, LeftBar, TabBar} from 'components';
 import {ThemeProvider} from 'providers/theme';
+import {Suspense} from 'react';
 import {useMediaQuery} from 'react-responsive';
 import {Outlet} from 'react-router-dom';
 import {mediaBreakpoints} from 'responsive';
@@ -26,7 +27,9 @@ export const Layout = () => {
             <TabBar />
 
             <main className="page-wrapper px-4 pt-4 sm:px-8">
-              <Outlet />
+              <Suspense fallback={<div>loading...</div>}>
+                <Outlet />
+              </Suspense>
             </main>
           </section>
         </section>

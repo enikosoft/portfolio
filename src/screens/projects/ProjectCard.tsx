@@ -1,5 +1,6 @@
 import {useState} from 'react';
-import {MdClose} from 'react-icons/md';
+import {FaGithub} from 'react-icons/fa';
+import {MdClose, MdOutlineOpenInNew} from 'react-icons/md';
 import {useMediaQuery} from 'react-responsive';
 import {mediaBreakpoints} from 'responsive';
 import {Project} from './utils';
@@ -20,7 +21,7 @@ const ProjectCard = ({project, isDialog = false, isOpenDialog, toggleShowMore}: 
         <div className="before:absolute before:inset-0 before:rounded-lg before:bg-white before:opacity-c8 before:light:bg-black"></div>
       )}
       <div className="relative flex w-full flex-row items-center">
-        <div className="flex h-24 w-24 items-center rounded-sm bg-white">
+        <div className="flex h-24 w-24 min-w-[96px] items-center rounded-sm">
           <img src={project.img} alt={project.name} className="h-full w-full" />
         </div>
         <div className="pl-4 text-primaryColor">
@@ -47,15 +48,33 @@ font-semibold text-black opacity-0 transition-opacity group-hover:opacity-100"
         </div>
       </div>
       <div className="relative w-full pb-4">
+        {project?.git && (
+          <div className="flex w-full items-center pt-4">
+            <FaGithub className="mr-2 text-[30px]" />
+            <a
+              title="View on git hub"
+              className="rounded-md bg-black px-4 py-1 text-primaryColor hover:cursor-pointer"
+              href={project.git}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Visit project
+            </a>
+          </div>
+        )}
+
         {project?.url && (
-          <a
-            className="text-base text-themePrimaryColor underline"
-            href={project?.url}
-            target="_blank"
-            rel="noreferrer"
-          >
-            Open application
-          </a>
+          <div className="flex w-full items-center pt-2">
+            <MdOutlineOpenInNew className="mr-2 text-[30px] text-themePrimaryColor" />
+            <a
+              className="px-1 text-base text-themePrimaryColor hover:underline"
+              href={project?.url}
+              target="_blank"
+              rel="noreferrer"
+            >
+              View Demo
+            </a>
+          </div>
         )}
 
         <p className="mt-4 w-full break-words pb-2 text-base text-primaryColor">

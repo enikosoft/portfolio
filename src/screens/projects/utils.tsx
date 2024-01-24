@@ -1,5 +1,7 @@
 import {BiLogoPostgresql} from 'react-icons/bi';
 import {FaNodeJs, FaReact} from 'react-icons/fa';
+import {SiTailwindcss} from 'react-icons/si';
+
 import {
   SiAmazonaws,
   SiApollographql,
@@ -17,6 +19,7 @@ import cfLofo from 'assets/images/cfLogo.png';
 import s2eLofo from 'assets/images/s2e-logo.webp';
 import viktreLofo from 'assets/images/viktre-logo.jpeg';
 import weatherAppLofo from 'assets/images/weatherApp.jpeg';
+import porfolioLogo from '../../../public/logo.svg';
 
 export interface Project {
   name: string;
@@ -24,6 +27,7 @@ export interface Project {
   img: string;
   stack: JSX.Element[];
   url?: string;
+  git?: string;
 }
 
 export const comerciaProjects: Project[] = [
@@ -96,6 +100,21 @@ export const comerciaProjects: Project[] = [
 
 export const customProjects: Project[] = [
   {
+    name: 'My Portfolio',
+    url: '',
+    description: `Welcome to my portfolio! Explore my diverse range of projects,
+      showcasing my expertise in building responsive and dynamic web applications.
+      Dive into my code, discover my skills,
+      and get in touch to discuss exciting opportunities. Let's bring ideas to life through technology!`,
+    img: porfolioLogo,
+    stack: [
+      <SiTypescript key="ts" color="#2F75C0" className="text-[28px]" />,
+      <FaReact key="react" color="#5ED4F4" className="text-[28px]" />,
+      <SiTailwindcss key="tailwind color=" color="#3FBDCC" className="text-[28px]" />,
+    ],
+    git: 'https://github.com/enikosoft/portfolio',
+  },
+  {
     name: 'Weather React App',
     url: 'https://develop.d32z2z7ii5cmj4.amplifyapp.com/',
     description: `React/Typescript/StyledComponent/zustand. You can find weather and current location time for any cities, searched by Google Place Api.`,
@@ -104,5 +123,6 @@ export const customProjects: Project[] = [
       <SiTypescript key="ts" color="#2F75C0" className="text-[28px]" />,
       <FaReact key="react" color="#5ED4F4" className="text-[28px]" />,
     ],
+    git: 'https://github.com/enikosoft/weather-online-widget',
   },
 ];

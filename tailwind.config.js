@@ -44,7 +44,6 @@ export default {
         projects: 'calc(85vh)',
       },
       backgroundImage: {
-        photo: `url('assets/images/photo.png')`,
         about: "url('assets/images/about.png')",
         cfProject: "url('assets/images/cf-logo.webp')",
       },

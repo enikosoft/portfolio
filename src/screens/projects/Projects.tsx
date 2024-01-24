@@ -38,11 +38,11 @@ export const Projects = () => {
           Comercial
         </button>
         <button
-          title="Custom projects"
+          title="Personal projects"
           onClick={() => setActiveTab('personal')}
           className={activeTab === 'personal' ? `btn-active` : 'btn'}
         >
-          Custom
+          Personal
         </button>
       </div>
       <>
