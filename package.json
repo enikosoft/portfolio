@@ -23,6 +23,7 @@
     "react-router-dom": "^6.20.0",
     "react-textarea-autosize": "^8.5.3",
     "react-type-animation": "^3.2.0",
+    "rollup-plugin-analyzer": "^4.0.0",
     "tailwind-merge": "^2.0.0",
     "vite-tsconfig-paths": "^4.2.1"
   },

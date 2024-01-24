@@ -6,9 +6,9 @@ import {Suspense, lazy} from 'react';
 import {useMediaQuery} from 'react-responsive';
 import {Outlet} from 'react-router-dom';
 import {mediaBreakpoints} from 'responsive';
-import {socialNetworks} from './contact';
 
 const LeftBar = lazy(() => import('../components/LeftBar/LeftBar'));
+const SocialNetworks = lazy(() => import('./SocialNetworks'));
 
 export const Layout = () => {
   const mobileAndTablet = useMediaQuery({
@@ -18,17 +18,13 @@ export const Layout = () => {
   return (
     <ThemeProvider>
       <div className="flex h-[100svh] w-full flex-col">
-        <Header />
+        <Header mobileAndTablet={mobileAndTablet} />
 
         <section className="flex h-content w-full flex-col-reverse overflow-hidden xl:flex-row">
-          {!mobileAndTablet && (
-            <div className="flex h-content min-w-[48px] justify-center bg-bgColor">
-              <div className="absolute bottom-16 flex flex-col gap-4">{socialNetworks(32).map((item) => item)}</div>
-            </div>
-          )}
+          {!mobileAndTablet && <SocialNetworks />}
           <LeftBar />
           <section className="main-window h-full w-full overflow-hidden bg-bgColor pb-2">
-            <TabBar />
+            <TabBar mobileAndTablet={mobileAndTablet} />
 
             <main className="page-wrapper px-4 pt-4 sm:px-8">
               <Suspense fallback={<div>loading...</div>}>
@@ -38,7 +34,7 @@ export const Layout = () => {
           </section>
         </section>
 
-        <Footer />
+        <Footer mobileAndTablet={mobileAndTablet} />
       </div>
     </ThemeProvider>
   );

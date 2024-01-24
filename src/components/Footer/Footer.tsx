@@ -4,17 +4,11 @@ import {ThemeContextInterface} from 'providers/theme/types';
 import {lazy, useContext, useState} from 'react';
 import {createPortal} from 'react-dom';
 import {MdOutlineDarkMode} from 'react-icons/md';
-import {useMediaQuery} from 'react-responsive';
-import {mediaBreakpoints} from 'responsive';
 import {socialNetworks} from 'screens/contact/utils';
 
 const ThemeDialog = lazy(() => import('../../components/ThemeDialog/ThemeDialog'));
 
-export const Footer = () => {
-  const mobileAndTablet = useMediaQuery({
-    query: `(max-width: ${mediaBreakpoints.xl}px)`,
-  });
-
+export const Footer = ({mobileAndTablet}: {mobileAndTablet: boolean}) => {
   const {theme} = useContext(ThemeContext) as ThemeContextInterface;
 
   const [themeDialogOpen, setThemeDialogOpen] = useState<boolean>(false);

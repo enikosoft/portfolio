@@ -1,15 +1,9 @@
 import {lazy} from 'react';
 import {GrSearch} from 'react-icons/gr';
-import {useMediaQuery} from 'react-responsive';
-import {mediaBreakpoints} from 'responsive';
 
 const MenuResponsive = lazy(() => import('../../components/TabBar/MenuResponsive'));
 
-export const Header = () => {
-  const mobileAndTablet = useMediaQuery({
-    query: `(max-width: ${mediaBreakpoints.xl}px)`,
-  });
-
+export const Header = ({mobileAndTablet}: {mobileAndTablet: boolean}) => {
   return (
     <section className="left-0 top-0 flex h-header w-full	 items-center justify-between border-b border-b-headerBorderColor bg-bgColor pl-3">
       <div className="flex items-center gap-2">

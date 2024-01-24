@@ -2,19 +2,13 @@ import {AppContext, AppContextInterface} from 'providers/application';
 import {RoutesLinkItems, routesLinkItems} from 'providers/routes';
 import {useContext} from 'react';
 import {MdClose} from 'react-icons/md';
-import {useMediaQuery} from 'react-responsive';
 import {Link, useLocation, useNavigate} from 'react-router-dom';
-import {mediaBreakpoints} from 'responsive';
 
-export const TabBar = () => {
+export const TabBar = ({mobileAndTablet}: {mobileAndTablet: boolean}) => {
   const {pathname, state} = useLocation();
   const navigate = useNavigate();
 
   const {pdfPreviewerOpen, setPdfPreviewerOpen} = useContext(AppContext) as AppContextInterface;
-
-  const mobileAndTablet = useMediaQuery({
-    query: `(max-width: ${mediaBreakpoints.xl}px)`,
-  });
 
   const handleCloseCVPreviewer = () => {
     setPdfPreviewerOpen(false);
