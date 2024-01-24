@@ -73,3 +73,5 @@ export const PdfPriever = () => {
     </Worker>
   );
 };
+
+export default PdfPriever;

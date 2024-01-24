@@ -1,9 +1,9 @@
-import {ReactElement} from 'react';
+import {ReactElement, lazy} from 'react';
 import {FaFilePdf, FaHtml5, FaReact} from 'react-icons/fa';
 import {SiJavascript, SiTypescript} from 'react-icons/si';
 import {VscJson} from 'react-icons/vsc';
 import {Navigate, createBrowserRouter} from 'react-router-dom';
-import {About, Contact, Home, Layout, PdfPriever, Projects, Technologies} from 'screens';
+import {Layout} from 'screens';
 
 export interface RoutesLinkItems {
   logo: ReactElement;
@@ -11,6 +11,13 @@ export interface RoutesLinkItems {
   path: string;
   closable?: boolean;
 }
+
+const Home = lazy(() => import('./../../screens/home/Home'));
+const About = lazy(() => import('./../../screens/about/About'));
+const Contact = lazy(() => import('./../../screens/contact/Contact'));
+const PdfPriever = lazy(() => import('./../../screens/pdfPreviewer/PdfPreviewer'));
+const Projects = lazy(() => import('./../../screens/projects/Projects'));
+const Technologies = lazy(() => import('./../../screens/technologies/Technologies'));
 
 export const routesLinkItems = (pdfPreviewerOpen: boolean): RoutesLinkItems[] => {
   const cvMenuItem = pdfPreviewerOpen
