@@ -36,3 +36,5 @@ export const ThemeDialog = ({setThemeDialogOpen}: {setThemeDialogOpen: Dispatch<
     </div>
   );
 };
+
+export default ThemeDialog;

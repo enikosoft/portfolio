@@ -1,11 +1,14 @@
-import {ThemeDialog} from 'components/ThemeDialog/index';
-import {ThemeContext, ThemeContextInterface} from 'providers/theme';
-import {useContext, useState} from 'react';
+import {ThemeContext} from 'providers/theme/ThemeContex';
+import {ThemeContextInterface} from 'providers/theme/types';
+
+import {lazy, useContext, useState} from 'react';
 import {createPortal} from 'react-dom';
 import {MdOutlineDarkMode} from 'react-icons/md';
 import {useMediaQuery} from 'react-responsive';
 import {mediaBreakpoints} from 'responsive';
-import {socialNetworks} from 'screens/contact';
+import {socialNetworks} from 'screens/contact/utils';
+
+const ThemeDialog = lazy(() => import('../../components/ThemeDialog/ThemeDialog'));
 
 export const Footer = () => {
   const mobileAndTablet = useMediaQuery({

@@ -1,7 +1,7 @@
 import {Footer} from 'components/Footer/index';
 import {Header} from 'components/Header/index';
 import {TabBar} from 'components/TabBar/TabBar';
-import {ThemeProvider} from 'providers/theme';
+import {ThemeProvider} from 'providers/theme/ThemeProvider';
 import {Suspense, lazy} from 'react';
 import {useMediaQuery} from 'react-responsive';
 import {Outlet} from 'react-router-dom';
