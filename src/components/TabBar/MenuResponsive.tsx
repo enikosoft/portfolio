@@ -16,6 +16,7 @@ export const MenuResponsive = () => {
 
   return (
     <button
+      title="Menu button"
       type="button"
       className={`hamburger-menu ${isResponsiveTabBar && 'active'}`}
       onClick={() => setResponsiveTabBar(!isResponsiveTabBar)}
