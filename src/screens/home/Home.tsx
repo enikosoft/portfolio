@@ -4,7 +4,7 @@ import {Link, useLocation, useNavigate} from 'react-router-dom';
 import {TypeAnimation} from 'react-type-animation';
 
 import pdf from 'assets/EvgenNikolenko-JSdev.pdf';
-import myPhoto from 'assets/images/photo.png';
+import myPhoto from '../../../public/photo.png';
 
 export const Home = () => {
   const navigate = useNavigate();
