@@ -57,9 +57,9 @@ export const Home = () => {
       </div>
       <div className="static: w-ful top-0 flex justify-center xl:relative xl:top-[-64px] xl:w-1/2 xl:pt-10">
         <img
-          className="h-[300px] w-[230px] md:h-[400px] md:w-[300px] xl:h-[500px] xl:w-[350px]"
+          className="h-[300px] w-[215px] md:h-[400px] md:w-[286px] xl:h-[500px] xl:w-[358px]"
           loading="lazy"
-          src="https://eniko-portfolio.s3.eu-west-2.amazonaws.com/photo.png"
+          src="https://eniko-portfolio.s3.eu-west-2.amazonaws.com/photoe.webp"
           alt="myPhoto"
         />
       </div>
