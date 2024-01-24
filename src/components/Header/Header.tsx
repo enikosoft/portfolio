@@ -1,7 +1,9 @@
-import {MenuResponsive} from 'components';
+import {lazy} from 'react';
 import {GrSearch} from 'react-icons/gr';
 import {useMediaQuery} from 'react-responsive';
 import {mediaBreakpoints} from 'responsive';
+
+const MenuResponsive = lazy(() => import('../../components/TabBar/MenuResponsive'));
 
 export const Header = () => {
   const mobileAndTablet = useMediaQuery({
@@ -22,7 +24,7 @@ export const Header = () => {
       </div>
 
       <div>
-        <MenuResponsive />{' '}
+        <MenuResponsive />
       </div>
     </section>
   );

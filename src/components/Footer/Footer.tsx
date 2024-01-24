@@ -1,4 +1,4 @@
-import {ThemeDialog} from 'components';
+import {ThemeDialog} from 'components/ThemeDialog/index';
 import {ThemeContext, ThemeContextInterface} from 'providers/theme';
 import {useContext, useState} from 'react';
 import {createPortal} from 'react-dom';
