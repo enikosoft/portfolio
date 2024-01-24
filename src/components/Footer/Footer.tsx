@@ -19,7 +19,7 @@ export const Footer = () => {
   const sidebarContentEl = document.getElementsByClassName('main-window')[0];
 
   return (
-    <div className="relative flex h-[48px] w-full flex-row justify-between bg-themePrimaryColor xl:h-[24px]">
+    <div className="relative flex h-[48px] w-full flex-row justify-between bg-themePrimaryColor xl:h-[24px] xl:justify-end">
       {mobileAndTablet && (
         <div className="flex flex-row gap-2 pl-2">{socialNetworks(24, true).map((item) => item)}</div>
       )}
@@ -30,7 +30,7 @@ export const Footer = () => {
         className="flex h-full flex-row items-center justify-end px-2 hover:cursor-pointer"
       >
         <MdOutlineDarkMode className="pr-1 text-xl text-tabBarActiveTextColor" />
-        <span className="text-tabBarActiveTextColor">{theme}</span>
+        <span className="font-bold text-tabBarActiveTextColor">{theme}</span>
       </div>
     </div>
   );

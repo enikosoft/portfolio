@@ -4,6 +4,7 @@ import {Link, useLocation, useNavigate} from 'react-router-dom';
 import {TypeAnimation} from 'react-type-animation';
 
 import pdf from 'assets/EvgenNikolenko-JSdev.pdf';
+import myPhoto from 'assets/images/photo.png';
 
 export const Home = () => {
   const navigate = useNavigate();
@@ -54,8 +55,13 @@ export const Home = () => {
           </div>
         </div>
       </div>
-      <div className="static: w-ful top-0 justify-center xl:relative xl:top-[-64px] xl:w-1/2">
-        <div className="h-[300px] w-[300px] bg-photo bg-cover bg-bottom md:h-[400px] md:w-[400px] xl:h-[580px] xl:w-[500px]"></div>
+      <div className="static: w-ful top-0 flex justify-center xl:relative xl:top-[-64px] xl:w-1/2 xl:pt-10">
+        <img
+          className="h-[300px] w-[230px] md:h-[400px] md:w-[300px] xl:h-[500px] xl:w-[350px]"
+          loading="lazy"
+          src={myPhoto}
+          alt="myPhoto"
+        />
       </div>
     </div>
   );

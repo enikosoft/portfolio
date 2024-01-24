@@ -46,7 +46,7 @@ font-semibold text-black opacity-0 transition-opacity group-hover:opacity-100"
           </div>
         </div>
       </div>
-      <div className="relative pb-4">
+      <div className="relative w-full pb-4">
         {project?.url && (
           <a
             className="text-base text-themePrimaryColor underline"
@@ -58,7 +58,9 @@ font-semibold text-black opacity-0 transition-opacity group-hover:opacity-100"
           </a>
         )}
 
-        <p className="mt-4 pb-2 text-base text-primaryColor">{isDialog ? project.description : displayedText}</p>
+        <p className="mt-4 w-full break-words pb-2 text-base text-primaryColor">
+          {isDialog ? project.description : displayedText}
+        </p>
 
         {project.description.length > 3 && !isDialog && (
           <button
