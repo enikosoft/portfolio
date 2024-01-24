@@ -42,11 +42,12 @@ export const Home = () => {
             repeat={Infinity}
           />
           <div className="mt-10 flex w-full flex-col sm:flex-row">
-            <Link to={pdf} target="_blank" download>
+            <Link title="download cv" to={pdf} target="_blank" download>
               <button className="btn mb-8 mr-10 w-full rounded px-12 py-4 sm:mb-0 sm:w-fit">Download CV</button>
             </Link>
 
             <button
+              title="open cv"
               className="btn-secondary w-full rounded px-12 py-4 hover:brightness-110 sm:w-fit"
               onClick={handleShowCV}
             >

@@ -63,7 +63,9 @@ export const Contact = () => {
             </p>
           ))}
           <p className="line-contact text-xl text-primaryColor">{'}'}</p>
-          <button className="btn mt-8 block lg:m-auto">Send Email</button>
+          <button title="send email" className="btn mt-8 block lg:m-auto">
+            Send Email
+          </button>
         </div>
       </div>
     </div>

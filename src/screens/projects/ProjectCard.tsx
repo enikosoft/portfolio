@@ -64,6 +64,7 @@ font-semibold text-black opacity-0 transition-opacity group-hover:opacity-100"
 
         {project.description.length > 3 && !isDialog && (
           <button
+            title={isOpenDialog ? 'Read less' : 'Read more'}
             className="absolute font-semibold text-themePrimaryColor hover:cursor-pointer"
             onClick={toggleShowMore}
           >
@@ -100,7 +101,11 @@ const ProjectCardWrapper = ({project}: {project: Project}) => {
                   <div className="relative flex w-full flex-col rounded-lg border-0 bg-bgColor shadow-lg outline-none focus:outline-none">
                     <div className="relative">
                       <ProjectCard isDialog project={project} isOpenDialog={showMore} toggleShowMore={toggleShowMore} />
-                      <button className="absolute right-2 top-2 text-white" onClick={() => setShowMore(false)}>
+                      <button
+                        title="See more"
+                        className="absolute right-2 top-2 text-white"
+                        onClick={() => setShowMore(false)}
+                      >
                         <MdClose className="text-[28px]" />
                       </button>
                     </div>

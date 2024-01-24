@@ -22,6 +22,7 @@ export const ThemeDialog = ({setThemeDialogOpen}: {setThemeDialogOpen: Dispatch<
           return (
             <div key={key} className="px-4 py-2 text-center text-lg text-primaryColor">
               <button
+                title="theme"
                 onClick={handleSelectTheme(item)}
                 disabled={selected}
                 className={`btn disabled:cursor-not-allowed ${selected ? 'bg-themePrimaryColor' : ''}`}

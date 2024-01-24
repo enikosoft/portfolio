@@ -10,7 +10,11 @@ const handleOpenGmail = () => {
 };
 
 export const socialNetworks = (size: number = 54, isFooter = false) => [
-  <button key="linkedin" onClick={handleOpenSocialNetwork('https://www.linkedin.com/in/eugene-nikolenko-056822151/')}>
+  <button
+    title="linkedin"
+    key="linkedin"
+    onClick={handleOpenSocialNetwork('https://www.linkedin.com/in/eugene-nikolenko-056822151/')}
+  >
     <FaLinkedin
       size={size}
       className={`m-auto text-[${size}px] ${
@@ -18,7 +22,7 @@ export const socialNetworks = (size: number = 54, isFooter = false) => [
       } hover:cursor-pointer`}
     />
   </button>,
-  <button key="github" onClick={handleOpenSocialNetwork('https://github.com/enikosoft/')}>
+  <button title="github" key="github" onClick={handleOpenSocialNetwork('https://github.com/enikosoft/')}>
     <FaGithub
       size={size}
       className={`m-auto text-[${size}px] ${
@@ -26,7 +30,7 @@ export const socialNetworks = (size: number = 54, isFooter = false) => [
       } hover:cursor-pointer`}
     />
   </button>,
-  <button key="telegram" onClick={handleOpenSocialNetwork('https://t.me/evgennikolenko')}>
+  <button title="telegram" key="telegram" onClick={handleOpenSocialNetwork('https://t.me/evgennikolenko')}>
     <FaTelegram
       size={size}
       key="telegram"
@@ -35,7 +39,11 @@ export const socialNetworks = (size: number = 54, isFooter = false) => [
       } hover:cursor-pointer`}
     />
   </button>,
-  <button key="instagram" onClick={handleOpenSocialNetwork('https://www.instagram.com/eugennikolenko/?hl=es')}>
+  <button
+    title="instagram"
+    key="instagram"
+    onClick={handleOpenSocialNetwork('https://www.instagram.com/eugennikolenko/?hl=es')}
+  >
     <FaInstagramSquare
       size={size}
       className={`m-auto text-[${size}px] ${
@@ -43,7 +51,7 @@ export const socialNetworks = (size: number = 54, isFooter = false) => [
       } hover:cursor-pointer`}
     />
   </button>,
-  <button key="gmail" onClick={handleOpenGmail}>
+  <button title="gmail" key="gmail" onClick={handleOpenGmail}>
     <BiLogoGmail
       size={size}
       className={`m-auto text-[${size}px] ${

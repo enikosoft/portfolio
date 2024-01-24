@@ -29,8 +29,8 @@ export const Footer = () => {
         onClick={() => setThemeDialogOpen(!themeDialogOpen)}
         className="flex h-full flex-row items-center justify-end px-2 hover:cursor-pointer"
       >
-        <MdOutlineDarkMode className="pr-1 text-xl text-tabBarActiveTextColor" />
-        <span className="font-bold text-tabBarActiveTextColor">{theme}</span>
+        <MdOutlineDarkMode className="pr-1 text-xl text-bgColor" />
+        <span className="font-bold text-bgColor">{theme}</span>
       </div>
     </div>
   );

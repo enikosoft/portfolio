@@ -51,7 +51,9 @@ export const Technologies = () => {
       <div className="mt-12 w-full">
         <i className="fond-light pr-4 text-lg text-primaryColor">More information</i>
         <Link to={pdf} target="_blank" download>
-          <button className="btn">Download CV</button>
+          <button title="Download cv" className="btn">
+            Download CV
+          </button>
         </Link>
       </div>
     </div>

@@ -30,10 +30,18 @@ export const Projects = () => {
         </div>
       </div>
       <div className="mb-8">
-        <button onClick={() => setActiveTab('comercial')} className={activeTab === 'comercial' ? `btn-active` : 'btn'}>
+        <button
+          title="Comercial projects"
+          onClick={() => setActiveTab('comercial')}
+          className={activeTab === 'comercial' ? `btn-active` : 'btn'}
+        >
           Comercial
         </button>
-        <button onClick={() => setActiveTab('personal')} className={activeTab === 'personal' ? `btn-active` : 'btn'}>
+        <button
+          title="Custom projects"
+          onClick={() => setActiveTab('personal')}
+          className={activeTab === 'personal' ? `btn-active` : 'btn'}
+        >
           Custom
         </button>
       </div>
@@ -55,7 +63,9 @@ export const Projects = () => {
       <div className="mt-12 w-full">
         <i className="fond-light pr-4 text-lg text-primaryColor">More information</i>
         <Link to={pdf} target="_blank" download>
-          <button className="btn">Download CV</button>
+          <button title="Download cv" className="btn">
+            Download CV
+          </button>
         </Link>{' '}
       </div>
     </>

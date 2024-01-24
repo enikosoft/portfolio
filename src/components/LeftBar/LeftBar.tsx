@@ -38,6 +38,7 @@ export const LeftBar = () => {
         <div className="block font-code font-light text-textEditorColor">EXPLORER</div>
       </div>
       <button
+        title="open-folder-structure"
         type="button"
         className="flex w-full items-center gap-2 px-5 py-1 text-base text-textEditorColor hover:bg-textEditorHoverBg hover:text-textEditorHoverColor"
         onClick={() => setOpen(!open)}

@@ -32,12 +32,12 @@ export const PdfPriever = () => {
               <>
                 {mobile ? (
                   <Link to={pdf} target="_blank" download>
-                    <button className="btn mb-2 mr-2 h-8">
+                    <button title="download" className="btn mb-2 mr-2 h-8">
                       <IoMdDownload />{' '}
                     </button>
                   </Link>
                 ) : (
-                  <button className="btn mb-2 mr-2 h-8" onClick={props.onClick}>
+                  <button title="fullscreen" className="btn mb-2 mr-2 h-8" onClick={props.onClick}>
                     <BsArrowsFullscreen />
                   </button>
                 )}
@@ -48,7 +48,7 @@ export const PdfPriever = () => {
           <div className="flex h-8 flex-row pb-2">
             <ZoomOut>
               {(props: RenderZoomOutProps) => (
-                <button className="btn h-8" onClick={props.onClick}>
+                <button title="zoom out" className="btn h-8" onClick={props.onClick}>
                   <LuZoomOut />
                 </button>
               )}
@@ -61,7 +61,7 @@ export const PdfPriever = () => {
             </div>
             <ZoomIn>
               {(props: RenderZoomInProps) => (
-                <button className="btn h-8" onClick={props.onClick}>
+                <button title="zoom in" className="btn h-8" onClick={props.onClick}>
                   <LuZoomIn />
                 </button>
               )}
