@@ -4,7 +4,6 @@ import {Link, useLocation, useNavigate} from 'react-router-dom';
 import {TypeAnimation} from 'react-type-animation';
 
 import pdf from 'assets/EvgenNikolenko-JSdev.pdf';
-import myPhoto from '../../../public/photo.png';
 
 export const Home = () => {
   const navigate = useNavigate();
@@ -60,7 +59,7 @@ export const Home = () => {
         <img
           className="h-[300px] w-[230px] md:h-[400px] md:w-[300px] xl:h-[500px] xl:w-[350px]"
           loading="lazy"
-          src={myPhoto}
+          src="https://eniko-portfolio.s3.eu-west-2.amazonaws.com/photo.png"
           alt="myPhoto"
         />
       </div>
