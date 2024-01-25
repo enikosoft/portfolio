@@ -7,9 +7,13 @@
 
 <img src="https://img.shields.io/badge/-React-blue" alt="react"/> &nbsp; <img src="https://img.shields.io/badge/-Typescript-blue" alt="typescript"/> &nbsp; <img src="https://img.shields.io/badge/-Tailwind-blue" alt="tailwind"/> &nbsp; <img src="https://img.shields.io/badge/-Blue/Light/Dark mode-blue" alt="Light/Dark mode"/> &nbsp; <img src="https://img.shields.io/badge/-Minimalistic-blue" alt="minimalistic"/> &nbsp; <img src="https://img.shields.io/badge/-Responsice-blue" alt="responsice"/>
 
-## Overview
+## Images of The Portfolio Website:
 ![React Portfolio Website](https://github.com/enikosoft/portfolio/blob/develop/images/Screen1.png)
 ![React Portfolio Website](https://github.com/enikosoft/portfolio/blob/develop/images/Screen2.png)
+
+
+![React Portfolio Website](https://github.com/enikosoft/portfolio/blob/develop/images/Mob1.jpg)
+![React Portfolio Website](https://github.com/enikosoft/portfolio/blob/develop/images/Mob2.jpg)
 
 ## Demo 🎥
 
