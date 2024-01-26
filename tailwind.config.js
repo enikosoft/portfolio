@@ -1,9 +1,9 @@
 /** @type {import('tailwindcss').Config} */
-import plugin from "tailwindcss/plugin";
+import plugin from 'tailwindcss/plugin';
 
 export default {
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
-  darkMode: "class",
+  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
@@ -29,35 +29,38 @@ export default {
         tabBarActiveBgColor: `var(--tabBarActiveBgColor)`,
         tabBarBorderColor: `var(--tabBarBorderColor)`,
       },
+      opacity: {
+        c8: '0.08',
+      },
       fontFamily: {
-        code: ["Source Code Pro", "sans-serif"],
-        nunito: ["Nunito", "sans-serif"],
-        laBelleAurore: ["La Belle Aurore", "cursive"],
+        code: ['Source Code Pro', 'sans-serif'],
+        nunito: ['Nunito', 'sans-serif'],
+        laBelleAurore: ['La Belle Aurore', 'cursive'],
       },
       height: {
-        header: "48px",
-        footer: "24px",
-        content: "calc(100vh - 72px)",
-        about: "calc(80vh)",
-        projects: "calc(85vh)",
+        header: '48px',
+        content: '100svh',
+        about: 'calc(80vh)',
+        projects: 'calc(85vh)',
       },
       backgroundImage: {
-        photo: "url('./src/assets/images/photo.png')",
-        about: "url('./src/assets/images/about.png')",
-        cfProject: "url('./src/assets/images/cf-logo.webp')",
+        about: "url('assets/images/about.png')",
+        cfProject: "url('assets/images/cf-logo.webp')",
       },
       boxShadow: {
-        technologiesCard: `2px 2px 10px 0px theme(colors.themePrimaryColor)`,
+        technologiesCard: `0px 0px 10px 1px theme(colors.themePrimaryColor)`,
       },
     },
   },
   plugins: [
-    plugin(function ({ addVariant, addBase }) {
-      addVariant("blue", ".blue &");
+    plugin(function ({addVariant, addBase}) {
+      addVariant('blue', '.blue &');
+      addVariant('light', '.light &');
+
       addBase({
-        h1: { fontSize: "44px", lineHeight: "45px" },
-        h2: { fontSize: "40px" },
-        h3: { fontSize: "35px" },
+        h1: {fontSize: '44px', lineHeight: '45px'},
+        h2: {fontSize: '40px'},
+        h3: {fontSize: '35px'},
       });
     }),
   ],

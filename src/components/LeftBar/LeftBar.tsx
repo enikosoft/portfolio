@@ -1,39 +1,44 @@
-import { useContext, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import {useContext, useState} from 'react';
+import {Link, useLocation, useNavigate} from 'react-router-dom';
 
-import { FaFolder, FaFolderOpen } from "react-icons/fa";
-import { IoIosArrowDown, IoIosArrowForward } from "react-icons/io";
+import {FaFolder, FaFolderOpen} from 'react-icons/fa';
+import {IoIosArrowDown, IoIosArrowForward} from 'react-icons/io';
 
-import appContext, { AppContext } from "providers/application/AppContext";
-import { routesLinkItems } from "providers/routes";
-import { twMerge } from "tailwind-merge";
+import {AppContext, AppContextInterface} from 'providers/application';
+import {routesLinkItems} from 'providers/routes';
+import {MdClose} from 'react-icons/md';
+import {twMerge} from 'tailwind-merge';
 
 export const LeftBar = () => {
-  const { pathname } = useLocation();
-
+  const {pathname} = useLocation();
+  const navigate = useNavigate();
   const [open, setOpen] = useState<boolean>(true);
-  const { isResponsiveTabBar, setResponsiveTabBar } = useContext(
-    appContext,
-  ) as AppContext;
+
+  const {isResponsiveTabBar, setResponsiveTabBar} = useContext(AppContext) as AppContextInterface;
+  const {pdfPreviewerOpen, setPdfPreviewerOpen} = useContext(AppContext) as AppContextInterface;
+
+  const handleCloseCVPreviewer = () => {
+    setPdfPreviewerOpen(false);
+    navigate('/');
+  };
 
   return (
     <aside
       className={twMerge(
-        `overflow-x border-t-1 fixed sm:block left-auto right-0 top-[46px] xl:top-12 z-40 h-content border border-b-0
-        border-r-0 border-l-headerBorderColor border-r-leftSideBorder border-t-headerBorderColor
-        bg-bgColor transition-all duration-200 ease-in
-        xl:left-12 xl:right-auto xl:w-72
+        `overflow-x border-t-1 fixed left-auto right-0 top-0 z-40 h-[100svh] border border-b-0 border-r-0 border-l-headerBorderColor border-r-leftSideBorder
+        border-t-headerBorderColor bg-bgColor transition-all duration-200
+        ease-in sm:block xl:static xl:left-12
+        xl:right-auto xl:top-12 xl:w-72
         xl:border-r xl:border-t-0
         xl:border-l-leftSideBorder xl:border-r-leftSideBorder xl:transition-none`,
-        ` ${isResponsiveTabBar ? "w-80" : "w-0"}`,
+        ` ${isResponsiveTabBar ? 'w-80' : 'w-0'}`
       )}
     >
       <div className="w-full px-4 py-2">
-        <div className="block font-code font-light text-textEditorColor">
-          EXPLORER
-        </div>
+        <div className="block font-code font-light text-textEditorColor">EXPLORER</div>
       </div>
       <button
+        title="open-folder-structure"
         type="button"
         className="flex w-full items-center gap-2 px-5 py-1 text-base text-textEditorColor hover:bg-textEditorHoverBg hover:text-textEditorHoverColor"
         onClick={() => setOpen(!open)}
@@ -45,17 +50,23 @@ export const LeftBar = () => {
       </button>
       {open && (
         <>
-          {routesLinkItems.map((item, key) => (
+          {routesLinkItems(pdfPreviewerOpen).map((item, key) => (
             <Link
               key={key}
-              to={item?.path || "/"}
+              to={item?.path || '/'}
               onClick={() => setResponsiveTabBar(!isResponsiveTabBar)}
               className={`${
-                pathname === item?.path && "active"
-              } flex items-center gap-2 px-14 py-1 text-base text-textEditorColor hover:bg-textEditorHoverBg hover:text-textEditorHoverColor [&.active]:bg-themePrimaryColor [&.active]:text-tabBarActiveTextColor`}
+                pathname === item?.path && 'active'
+              } relative flex items-center gap-2 px-14 py-1 text-base text-textEditorColor hover:bg-textEditorHoverBg hover:text-textEditorHoverColor [&.active]:bg-themePrimaryColor [&.active]:text-tabBarActiveTextColor`}
             >
               {item.logo}
               {item.title}
+              {item?.closable && (
+                <MdClose
+                  onClick={handleCloseCVPreviewer}
+                  className="absolute right-4 text-xl text-textEditorColor hover:cursor-pointer"
+                />
+              )}
             </Link>
           ))}
         </>

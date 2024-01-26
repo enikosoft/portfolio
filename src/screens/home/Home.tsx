@@ -1,53 +1,70 @@
-import { TypeAnimation } from "react-type-animation";
+import {AppContext, AppContextInterface} from 'providers/application';
+import {useContext} from 'react';
+import {Link, useLocation, useNavigate} from 'react-router-dom';
+import {TypeAnimation} from 'react-type-animation';
+
+import pdf from 'assets/EvgenNikolenko-JSdev.pdf';
 
 export const Home = () => {
+  const navigate = useNavigate();
+  const {pathname} = useLocation();
+
+  const {setPdfPreviewerOpen} = useContext(AppContext) as AppContextInterface;
+
+  const handleShowCV = () => {
+    setPdfPreviewerOpen(true);
+    navigate('/cv', {state: {historyPath: pathname}});
+  };
+
   return (
-    <div className="md:pb-40 lg:pb-40 xl:pb-0 flex items-center h-full justify-center sm:px-20 xl:flex-row flex-col-reverse">
-      <div className="flex items-center xl:items-end flex-col py-10 xl:w-1/2 w-full text-xl">
+    <div className="flex flex-col-reverse items-center justify-center sm:px-20 lg:pb-40 xl:flex-row xl:pb-0 xl:pt-20">
+      <div className="flex w-full flex-col items-center py-10 text-xl xl:w-1/2 xl:items-end">
         <div className="w-fit">
           <p className="text-xl text-themePrimaryColor">
-            <span className="span">{"<"}</span>Hi 👋 my name is
+            <span className="span">{'<'}</span>Hi 👋 my name is
           </p>
 
-          <h1 className="font-bold text-primaryColor opacity-70 pt-2 text-3xl sm:text-5xl">
-            Evgen Nikolenko{" "}
-            <span className="text-3xl sm:text-5xl font-extrabold text-themePrimaryColor">
-              {"/>"}
-            </span>{" "}
+          <h1 className="pt-2 text-3xl font-bold text-primaryColor opacity-70 sm:text-5xl">
+            Evgen Nikolenko <span className="text-3xl font-extrabold text-themePrimaryColor sm:text-5xl">{'/>'}</span>{' '}
           </h1>
           <TypeAnimation
-            sequence={[
-              "Full-Stack Developer",
-              1000,
-              "React Developer",
-              1000,
-              "Back-End Developer",
-              1000,
-            ]}
+            sequence={['Full-Stack Developer', 1000, 'React Developer', 1000, 'Back-End Developer', 1000]}
             wrapper="span"
             speed={1}
             style={{
-              paddingTop: "8px",
-              fontWeight: "300",
-              fontSize: "1.5rem",
-              color: "#768390",
-              display: "inline-block",
+              paddingTop: '8px',
+              fontWeight: '300',
+              fontSize: '1.5rem',
+              color: '#768390',
+              display: 'inline-block',
             }}
             repeat={Infinity}
           />
-          <div className="w-full mt-10 flex flex-col sm:flex-row">
-            <button className="w-full sm:w-fit rounded btn mb-8 sm:mb-0 mr-10 px-12 py-4">
-              Download CV
-            </button>
-            <button className="w-full sm:w-fit rounded btn-secondary px-12 py-4 hover:brightness-110">
+          <div className="mt-10 flex w-full flex-col sm:flex-row">
+            <Link title="download cv" to={pdf} target="_blank" download>
+              <button className="btn mb-8 mr-10 w-full rounded px-12 py-4 sm:mb-0 sm:w-fit">Download CV</button>
+            </Link>
+
+            <button
+              title="open cv"
+              className="btn-secondary w-full rounded px-12 py-4 hover:brightness-110 sm:w-fit"
+              onClick={handleShowCV}
+            >
               Open CV
             </button>
           </div>
         </div>
       </div>
-      <div className="static: xl:relative top-0 xl:top-[-64px] xl:w-1/2 w-ful justify-center">
-        <div className="bg-cover bg-photo w-[400px] h-[400px] xl:w-[500px] xl:h-[580px]"></div>
+      <div className="static: w-ful top-0 flex justify-center xl:relative xl:top-[-64px] xl:w-1/2 xl:pt-10">
+        <img
+          className="h-[300px] w-[215px] md:h-[400px] md:w-[286px] xl:h-[500px] xl:w-[358px]"
+          loading="lazy"
+          src="https://eniko-portfolio.s3.eu-west-2.amazonaws.com/photoe.webp"
+          alt="myPhoto"
+        />
       </div>
     </div>
   );
 };
+
+export default Home;

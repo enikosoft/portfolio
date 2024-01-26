@@ -1,56 +1,75 @@
-import { Tab, Tabs, TabsHeader } from "@material-tailwind/react";
-import { useState } from "react";
-import { ProjectCard } from "./ProjectCard";
+import {useState} from 'react';
+import ProjectCard from './ProjectCard';
+import {comerciaProjects, customProjects} from './utils';
+
+import pdf from 'assets/EvgenNikolenko-JSdev.pdf';
+import {Link} from 'react-router-dom';
 
 export const Projects = () => {
   const data = [
     {
-      label: "Comercial",
-      value: "comercial",
+      label: 'Comercial',
+      value: 'comercial',
     },
     {
-      label: "Personal",
-      value: "personal",
+      label: 'Personal',
+      value: 'personal',
     },
   ];
   const [activeTab, setActiveTab] = useState(data[0].value);
 
-  console.log("activeTab", activeTab);
   return (
-    <div className="pt-8">
-      <Tabs value={activeTab}>
-        <TabsHeader>
-          {data.map(({ label, value }) => (
-            <Tab
-              onClick={() => setActiveTab(value)}
-              key={value}
-              value={value}
-              className={`tab w-32 ${
-                activeTab === value ? "bg-themePrimaryColor" : ""
-              } hover:cursor-pointer`}
-            >
-              {label}
-            </Tab>
-          ))}
-        </TabsHeader>
-        {activeTab === "comercial" ? (
-          <div className="p-2 w-full grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-12">
-            <ProjectCard />
-            <ProjectCard />
-            <ProjectCard />
-            <ProjectCard />
+    <>
+      <div className="flex w-full flex-col items-center justify-center sm:px-1">
+        <div className="flex flex-row items-center pb-6 pt-4 align-middle">
+          <span className="html-tag">{'<b>'} </span>
+          <p className="px-2 pb-2 text-xl font-bold text-primaryColor sm:text-2xl">
+            My <span className="text-xl text-themePrimaryColor sm:text-2xl">Projects</span>
+          </p>
+          <span className="html-tag">{'</b>'}</span>
+        </div>
+      </div>
+      <div className="mb-8">
+        <button
+          title="Comercial projects"
+          onClick={() => setActiveTab('comercial')}
+          className={activeTab === 'comercial' ? `btn-active` : 'btn'}
+        >
+          Comercial
+        </button>
+        <button
+          title="Personal projects"
+          onClick={() => setActiveTab('personal')}
+          className={activeTab === 'personal' ? `btn-active` : 'btn'}
+        >
+          Personal
+        </button>
+      </div>
+      <>
+        {activeTab === 'comercial' ? (
+          <div className="xxl:grid-cols-3 grid grid-cols-1 gap-6 md:grid-cols-2">
+            {comerciaProjects.map((project, index) => (
+              <ProjectCard key={index} project={project} />
+            ))}
           </div>
         ) : (
-          <div className="bg-green-100"></div>
+          <div className="xxl:grid-cols-3 grid grid-cols-1 gap-6 md:grid-cols-2">
+            {customProjects.map((project, index) => (
+              <ProjectCard key={index} project={project} />
+            ))}
+          </div>
         )}
-      </Tabs>
-
-      <div className="w-full mt-12">
-        <i className="text-lg fond-light text-primaryColor pr-4">
-          More information
-        </i>
-        <button className="btn">Download CV</button>
+      </>
+      <div className="mt-12 w-full">
+        <i className="fond-light pr-4 text-lg text-primaryColor">More information</i>
+        <Link to={pdf} target="_blank" download>
+          <button title="Download cv" className="btn">
+            Download CV
+          </button>
+        </Link>{' '}
       </div>
-    </div>
+    </>
   );
 };
+
+export default Projects;
