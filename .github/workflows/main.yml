@@ -16,7 +16,7 @@ jobs:
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v3
         with:
-          role-to-assume: ${{ secret.AWS_ROLE_TO_ASSUME }}
+          role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
           role-session-name: GitHub_to_AWS_via_FederatedOIDC
           aws-region: ${{ env.AWS_REGION }}
       - name: Install dependencies and build
@@ -24,4 +24,4 @@ jobs:
           npm install
           npm run build
       - name: Deploy static site to S3 bucket
-        run: aws s3 sync dist/ s3://${{ secret.S3_BUCKET_NAME }} --delete
+        run: aws s3 sync dist/ s3://${{ secrets.S3_BUCKET_NAME }} --delete
