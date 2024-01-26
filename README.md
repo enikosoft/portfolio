@@ -1,7 +1,7 @@
-# My Portfolio🌟 <img align="right" src="https://github.com/enikosoft/portfolio/blob/develop/images/react.svg" height="50" alt="react icon"/>
+# My Portfolio🌟 <img align="right" src="https://github.com/enikosoft/portfolio/blob/main/images/react.svg" height="50" alt="react icon"/>
 
 <br/>
-Welcome to my portfolio!👋 I'm Evgen Nikolenko, a passionate React TypeScript developer. Explore my diverse range of projects, showcasing my expertise in building responsive and dynamic web applications. Dive into my code, discover my skills, and get in touch to discuss exciting opportunities. Let's bring ideas to life through technology!💻
+Welcome to my portfolio!👋 I'm Evgen Nikolenko, a passionate Full-stack JavaScript developer. Explore my diverse range of projects, showcasing my expertise in building responsive and dynamic web applications. Dive into my code, discover my skills, and get in touch to discuss exciting opportunities. Let's bring ideas to life through technology!💻
 <br />
 <br />
 
@@ -12,14 +12,14 @@ This repository contains code for Portfolio website created using React.
 
 ## Demo 🎥
 
-Check live demonstration <a href="https://develop.d235v2ghujwmr7.amplifyapp.com/"><strong>here</strong></a>
+Check live demonstration <a href="https://main.d235v2ghujwmr7.amplifyapp.com/"><strong>here</strong></a>
 
 
 ## Images of The Portfolio Website:
-![React Portfolio Website](https://github.com/enikosoft/portfolio/blob/develop/images/Screen1.png)
-![React Portfolio Website](https://github.com/enikosoft/portfolio/blob/develop/images/Screen2.png)
-![React Portfolio Website](https://github.com/enikosoft/portfolio/blob/develop/images/Mob1.jpg)
-![React Portfolio Website](https://github.com/enikosoft/portfolio/blob/develop/images/Mob2.jpg)
+![React Portfolio Website](https://github.com/enikosoft/portfolio/blob/main/images/Screen1.png)
+![React Portfolio Website](https://github.com/enikosoft/portfolio/blob/main/images/Screen2.png)
+![React Portfolio Website](https://github.com/enikosoft/portfolio/blob/main/images/Mob1.jpg)
+![React Portfolio Website](https://github.com/enikosoft/portfolio/blob/main/images/Mob2.jpg)
 
 ## Sections :bookmark:
 

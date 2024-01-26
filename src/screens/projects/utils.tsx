@@ -1,6 +1,6 @@
 import {BiLogoPostgresql} from 'react-icons/bi';
 import {FaNodeJs, FaReact} from 'react-icons/fa';
-import {SiTailwindcss} from 'react-icons/si';
+import {SiNextdotjs, SiTailwindcss} from 'react-icons/si';
 
 import {
   SiAmazonaws,
@@ -55,7 +55,7 @@ export const comerciaProjects: Project[] = [
     stack: [
       <SiTypescript key="ts" color="#2F75C0" className="text-[28px]" />,
       <FaReact key="react" color="#5ED4F4" className="text-[28px]" />,
-      <FaReact key="react-native" color="#5ED4F4" className="text-[28px]" />,
+      <FaReact key="native" color="#5ED4F4" className="text-[28px]" />,
       <FaNodeJs key="node" color="#86cf35" className="text-[28px]" />,
       <SiMysql key="mysql" color="#3A6596" className="text-[28px]" />,
       <SiPrisma key="prizma" color="#3294c9" className="text-[28px]" />,
@@ -77,9 +77,10 @@ export const comerciaProjects: Project[] = [
     `,
     img: s2eLofo,
     stack: [
+      <SiNextdotjs key="next" className="text-[28px] text-black light:text-black" />,
+      <SiNestjs key="nestjs" color="#DA224C" className="text-[28px]" />,
       <FaReact key="react" color="#5ED4F4" className="text-[28px]" />,
       <FaNodeJs key="node" color="#86cf35" className="text-[28px]" />,
-      <SiNestjs key="nestjs" color="#DA224C" className="text-[28px]" />,
       <SiMongodb key="mongodb" color="#2c913f" className="text-[28px]" />,
     ],
   },
