@@ -16,8 +16,12 @@ jobs:
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v3
         with:
-          role-to-assume: arn:aws:iam::714694923057:role/GitHubAction-AssumeRoleWithAction
+          role-to-assume: ${{ secret.AWS_ROLE_TO_ASSUME }}
           role-session-name: GitHub_to_AWS_via_FederatedOIDC
           aws-region: ${{ env.AWS_REGION }}
+      - name: Install dependencies and build
+        run: |
+          npm install
+          npm run build
       - name: Deploy static site to S3 bucket
-        run: aws s3 cp . s3://enikoportfolio
+        run: aws s3 sync dist/ s3://${{ secret.S3_BUCKET_NAME }} --delete
