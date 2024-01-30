@@ -1,9 +1,10 @@
-import {Link} from 'react-router-dom';
 import {skillset} from './utils';
 
-import pdf from 'assets/EvgenNikolenko-JSdev.pdf';
+import {useDownloadPdf} from 'hooks/useDownloadPdf';
 
 export const Technologies = () => {
+  const [handleDownload] = useDownloadPdf(import.meta.env.VITE_CV_PATH, 'Evgen-Nikolenko-FullStack-CV.pdf');
+
   return (
     <div className="flex w-full flex-col items-center justify-center sm:px-1">
       <div className="flex flex-row items-center pb-6 pt-4 align-middle">
@@ -50,11 +51,9 @@ export const Technologies = () => {
 
       <div className="mt-12 w-full">
         <i className="fond-light pr-4 text-lg text-primaryColor">More information</i>
-        <Link to={pdf} target="_blank" download>
-          <button title="Download cv" className="btn">
-            Download CV
-          </button>
-        </Link>
+        <button onClick={handleDownload} title="Download cv" className="btn">
+          Download CV
+        </button>
       </div>
     </div>
   );

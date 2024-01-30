@@ -2,8 +2,7 @@ import {useState} from 'react';
 import ProjectCard from './ProjectCard';
 import {comerciaProjects, customProjects} from './utils';
 
-import pdf from 'assets/EvgenNikolenko-JSdev.pdf';
-import {Link} from 'react-router-dom';
+import {useDownloadPdf} from 'hooks/useDownloadPdf';
 
 export const Projects = () => {
   const data = [
@@ -17,6 +16,8 @@ export const Projects = () => {
     },
   ];
   const [activeTab, setActiveTab] = useState(data[0].value);
+
+  const [handleDownload] = useDownloadPdf(import.meta.env.VITE_CV_PATH, 'Evgen-Nikolenko-FullStack-CV.pdf');
 
   return (
     <>
@@ -62,11 +63,9 @@ export const Projects = () => {
       </>
       <div className="mt-12 w-full">
         <i className="fond-light pr-4 text-lg text-primaryColor">More information</i>
-        <Link to={pdf} target="_blank" download>
-          <button title="Download cv" className="btn">
-            Download CV
-          </button>
-        </Link>{' '}
+        <button onClick={handleDownload} title="Download cv" className="btn">
+          Download CV
+        </button>
       </div>
     </>
   );

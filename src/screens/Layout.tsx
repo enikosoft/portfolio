@@ -27,7 +27,7 @@ export const Layout = () => {
             <TabBar mobileAndTablet={mobileAndTablet} />
 
             <main className="page-wrapper px-4 pt-4 sm:px-8">
-              <Suspense fallback={<div>loading...</div>}>
+              <Suspense fallback={<div></div>}>
                 <Outlet />
               </Suspense>
             </main>

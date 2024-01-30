@@ -12,14 +12,14 @@ This repository contains code for Portfolio website created using React.
 
 ## Demo 🎥
 
-Check live demonstration <a href="https://main.d235v2ghujwmr7.amplifyapp.com/"><strong>here</strong></a>
+Check live demonstration <a href="https://portfolio.enikosoft.com/"><strong>here</strong></a>
 
 
 ## Images of The Portfolio Website:
 ![React Portfolio Website](https://github.com/enikosoft/portfolio/blob/main/images/Screen1.png)
 ![React Portfolio Website](https://github.com/enikosoft/portfolio/blob/main/images/Screen2.png)
-![React Portfolio Website](https://github.com/enikosoft/portfolio/blob/main/images/Mob1.jpg)
-![React Portfolio Website](https://github.com/enikosoft/portfolio/blob/main/images/Mob2.jpg)
+![React Portfolio Website](https://github.com/enikosoft/portfolio/blob/main/images/Mob1.png)
+![React Portfolio Website](https://github.com/enikosoft/portfolio/blob/main/images/Mob2.png)
 
 ## Sections :bookmark:
 

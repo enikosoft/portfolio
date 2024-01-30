@@ -38,7 +38,7 @@
 
 @layer utilities {
   .page-wrapper {
-    height: calc(100svh - 124px);
+    height: calc(100svh - 121px);
     overflow: auto;
     padding-bottom: 24px;
     overflow-x: hidden;

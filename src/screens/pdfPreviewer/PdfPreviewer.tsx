@@ -6,9 +6,9 @@ import {BsArrowsFullscreen} from 'react-icons/bs';
 import {LuZoomIn, LuZoomOut} from 'react-icons/lu';
 
 import pdf from 'assets/EvgenNikolenko-JSdev.pdf';
+import {useDownloadPdf} from 'hooks/useDownloadPdf';
 import {IoMdDownload} from 'react-icons/io';
 import {useMediaQuery} from 'react-responsive';
-import {Link} from 'react-router-dom';
 import {mediaBreakpoints} from 'responsive';
 
 export const PdfPriever = () => {
@@ -23,6 +23,7 @@ export const PdfPriever = () => {
     query: `(max-width: ${mediaBreakpoints.sm}px)`,
   });
 
+  const [handleDownload] = useDownloadPdf(import.meta.env.VITE_CV_PATH, 'Evgen-Nikolenko-FullStack-CV.pdf');
   return (
     <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.js">
       <div className="h-full overflow-hidden p-2">
@@ -31,11 +32,9 @@ export const PdfPriever = () => {
             {(props: RenderEnterFullScreenProps) => (
               <>
                 {mobile ? (
-                  <Link to={pdf} target="_blank" download>
-                    <button title="download" className="btn mb-2 mr-2 h-8">
-                      <IoMdDownload />{' '}
-                    </button>
-                  </Link>
+                  <button onClick={handleDownload} title="download" className="btn mb-2 mr-2 h-8">
+                    <IoMdDownload />{' '}
+                  </button>
                 ) : (
                   <button title="fullscreen" className="btn mb-2 mr-2 h-8" onClick={props.onClick}>
                     <BsArrowsFullscreen />

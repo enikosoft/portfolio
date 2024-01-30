@@ -1,14 +1,12 @@
+import {useDownloadPdf} from 'hooks/useDownloadPdf';
 import {AppContext, AppContextInterface} from 'providers/application';
 import {useContext} from 'react';
-import {Link, useLocation, useNavigate} from 'react-router-dom';
+import {useLocation, useNavigate} from 'react-router-dom';
 import {TypeAnimation} from 'react-type-animation';
-
-import pdf from 'assets/EvgenNikolenko-JSdev.pdf';
 
 export const Home = () => {
   const navigate = useNavigate();
   const {pathname} = useLocation();
-
   const {setPdfPreviewerOpen} = useContext(AppContext) as AppContextInterface;
 
   const handleShowCV = () => {
@@ -16,8 +14,10 @@ export const Home = () => {
     navigate('/cv', {state: {historyPath: pathname}});
   };
 
+  const [handleDownload] = useDownloadPdf(import.meta.env.VITE_CV_PATH, 'Evgen-Nikolenko-FullStack-CV.pdf');
+
   return (
-    <div className="flex flex-col-reverse items-center justify-center sm:px-20 lg:pb-40 xl:flex-row xl:pb-0 xl:pt-20">
+    <div className="flex flex-col-reverse items-center justify-center sm:px-10 lg:pb-40 xl:flex-row xl:pb-0 xl:pt-20">
       <div className="flex w-full flex-col items-center py-10 text-xl xl:w-1/2 xl:items-end">
         <div className="w-fit">
           <p className="text-xl text-themePrimaryColor">
@@ -41,9 +41,13 @@ export const Home = () => {
             repeat={Infinity}
           />
           <div className="mt-10 flex w-full flex-col sm:flex-row">
-            <Link title="download cv" to={pdf} target="_blank" download>
-              <button className="btn mb-8 mr-10 w-full rounded px-12 py-4 sm:mb-0 sm:w-fit">Download CV</button>
-            </Link>
+            <button
+              title="download cv"
+              onClick={handleDownload}
+              className="btn mb-8 mr-10 w-full rounded px-12 py-4 sm:mb-0 sm:w-fit"
+            >
+              Download CV
+            </button>
 
             <button
               title="open cv"
@@ -59,7 +63,7 @@ export const Home = () => {
         <img
           className="h-[300px] w-[215px] md:h-[400px] md:w-[286px] xl:h-[500px] xl:w-[358px]"
           loading="lazy"
-          src="https://eniko-portfolio.s3.eu-west-2.amazonaws.com/photoe.webp"
+          src="https://evgennikolenko-data.s3.eu-west-2.amazonaws.com/photo.webp"
           alt="myPhoto"
         />
       </div>
