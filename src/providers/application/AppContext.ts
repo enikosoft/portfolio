@@ -1,9 +1,11 @@
-import { createContext } from "react";
+import {createContext} from 'react';
 
-export interface AppContext {
+export interface AppContextInterface {
   isResponsiveTabBar: boolean;
   setResponsiveTabBar(isResponsiveTabBar: boolean): void;
+
+  pdfPreviewerOpen: boolean;
+  setPdfPreviewerOpen(pdfPreviewerOpen: boolean): void;
 }
 
-const appContext = createContext<AppContext | null>(null);
-export default appContext;
+export const AppContext = createContext<AppContextInterface | null>(null);

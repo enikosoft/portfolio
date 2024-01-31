@@ -1,30 +1,40 @@
-# React + TypeScript + Vite
+# My Portfolio🌟 <img align="right" src="https://github.com/enikosoft/portfolio/blob/main/images/react.svg" height="50" alt="react icon"/>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<br/>
+Welcome to my portfolio!👋 I'm Evgen Nikolenko, a passionate Full-stack JavaScript developer. Explore my diverse range of projects, showcasing my expertise in building responsive and dynamic web applications. Dive into my code, discover my skills, and get in touch to discuss exciting opportunities. Let's bring ideas to life through technology!💻
+<br />
+<br />
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This repository contains code for Portfolio website created using React.
 
-## Expanding the ESLint configuration
+<img src="https://img.shields.io/badge/-React-blue" alt="react"/> &nbsp; <img src="https://img.shields.io/badge/-Typescript-blue" alt="typescript"/> &nbsp; <img src="https://img.shields.io/badge/-Tailwind-blue" alt="tailwind"/> &nbsp; <img src="https://img.shields.io/badge/-Blue/Light/Dark mode-blue" alt="Light/Dark mode"/> &nbsp; <img src="https://img.shields.io/badge/-Minimalistic-blue" alt="minimalistic"/> &nbsp; <img src="https://img.shields.io/badge/-Responsice-blue" alt="responsice"/>
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Demo 🎥
 
-- Configure the top-level `parserOptions` property like this:
+Check live demonstration <a href="https://portfolio.enikosoft.com/"><strong>here</strong></a>
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Images of The Portfolio Website:
+![React Portfolio Website](https://github.com/enikosoft/portfolio/blob/main/images/Screen1.png)
+![React Portfolio Website](https://github.com/enikosoft/portfolio/blob/main/images/Screen2.png)
+![React Portfolio Website](https://github.com/enikosoft/portfolio/blob/main/images/Mob1.png)
+![React Portfolio Website](https://github.com/enikosoft/portfolio/blob/main/images/Mob2.png)
+
+## Sections :bookmark:
+
+- Home Page
+- About Me
+- Skills
+- My Projects
+- Contact information
+
+## Run Locally
+Run this command 
+- ``git clone https://github.com/enikosoft/portfolio.git``
+- ``npm install``
+- ``npm run dev``
+<p>You are now in the dev environment and you can play around
+
+## 🌱 Contribution
+If you have any suggestions on what to improve in Reactfolio and would like to share them, feel free to leave an issue or fork project to implement your own ideas

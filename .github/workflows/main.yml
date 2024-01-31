@@ -1,0 +1,29 @@
+name: Deploy Portfolio on S3
+on:
+  push:
+    branches: [main]
+env:
+  AWS_REGION: 'eu-west-2'
+permissions:
+  id-token: write
+  contents: read
+jobs:
+  AssumeRoleAndCallIdentity:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Git clone the repository
+        uses: actions/checkout@v4
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v3
+        with:
+          role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
+          role-session-name: GitHub_to_AWS_via_FederatedOIDC
+          aws-region: ${{ env.AWS_REGION }}
+      - name: Install dependencies and build
+        env:
+          VITE_CV_PATH: ${{ secrets.VITE_CV_PATH }}
+        run: |
+          npm install
+          npm run build
+      - name: Deploy static site to S3 bucket
+        run: aws s3 sync dist/ s3://${{ secrets.S3_BUCKET_NAME }} --delete
